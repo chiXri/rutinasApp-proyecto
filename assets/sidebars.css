@@ -93,6 +93,7 @@ main {
   justify-content: space-between;
   width: 100%;
   color: black;
+  margin: 0px;
 }
 
 .contact-info, .contact-form {
