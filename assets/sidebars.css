@@ -1,10 +1,3 @@
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  background-color: #FFA366; /* Puedes ajustar el color según tus preferencias */
-
-}
-
 html {
   height: -webkit-fill-available;
 }
@@ -68,10 +61,10 @@ main {
   border-color: black;
 }
 #navigatorColum{
-  background-color: #d6902e;
+  background-color: #FFA366;
 }
 #separatorColum{
-  background-color: #ffd19b ;
+  background-color: rgba(33, 37, 41, 1);
   border-right: solid 2px;
   border-left: solid 2px;
   border-color: black;
@@ -86,7 +79,7 @@ main {
 
 .container {
   font-family: Arial, sans-serif;
-  background-color: #d6902e;
+  background-color: #FFA366;
   padding: 50px;
   display: flex;
   justify-content: center;
