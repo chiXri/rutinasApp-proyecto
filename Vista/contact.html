@@ -10,12 +10,10 @@
     <title>Contacto</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/dist/js/contact.js"></script>
 
     <style>
       
@@ -124,7 +122,7 @@
 
     
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="../assets/dist/css/img/logo.png" viewBox="0 0 118 94">
+  <symbol id="logo" viewBox="0 0 118 94">
     <title>Bootstrap</title>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
   </symbol>
@@ -134,7 +132,7 @@
   <symbol id="search" viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
   </symbol>
-  <symbol id="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+  <symbol id="mesaje" viewBox="0 0 16 16">
     <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
   </symbol>
   <symbol id="table" viewBox="0 0 16 16">
@@ -159,14 +157,14 @@
   <!-- Navigator colum-->
   <div id="navigatorColum" class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <img id="logo" src="../assets/dist/css/img/logo.png" class="logo"/>
+      <img src="../assets/dist/css/img/logo.png" class="logo" alt="logoNavigatorColum">
     </a>
     
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <!-- HOME -->
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
+        <a href="inicio.html" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Inicio
         </a>
@@ -181,7 +179,7 @@
       <!-- MESSAGES -->
       <li>
         <a href="#" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#bi bi-chat-dots-fill"/></svg>
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#mesaje"/></svg>
           Mensajes
         </a>
       </li>
@@ -245,41 +243,41 @@
     <div class="contact-info">
         <form action="#" method="POST">
             <div class="form-group">
-                <img id="logoContainer" src="../assets/dist/css/img/logo.png"/>
+                <img id="logoContainer" src="../assets/dist/css/img/logo.png" alt="logoForm">
             </div>
             <div class="form-group">
-              <label for="telefono">Teléfono:</label>
+              <b>Teléfono:</b>
               <a> +34 999-999-999</a>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <a>info@dailyroutine.com</a>                
+              <b>eMail:</b>
+              <a>info@dailyroutine.com</a>                
             </div>
             <div class="form-group">
-                <label for="horario">Horario:</label>
+              <b>Horario:</b>
                 <a>Lunes - Viernes</a>
                 <a>08:00 - 20:00</a>
             </div>
         </form>
     </div>
     <div class="contact-form">
-        <h2>Formulario de Contacto</h2>
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+      <h2>Formulario de Contacto</h2>
+      <form action="#" method="POST" id="formularioContacto">
+          <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="mensaje">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+      </form>
+  </div>
 </div>
     
 

@@ -56,7 +56,7 @@ main {
 .scrollarea {
   overflow-y: auto;
 }
-#logo{
+.logo{
   border: solid 3px;
   border-color: black;
 }
