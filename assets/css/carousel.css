@@ -27,7 +27,7 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 32rem;
-  background-image: url('img/logo.png');
+  background-image: url('../img/logo.png');
 
 }
 
