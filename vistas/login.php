@@ -86,6 +86,9 @@
         --bs-btn-active-bg: #5a23c8;
         --bs-btn-active-border-color: #5a23c8;
       }
+      .margen-inferior {
+        margin-bottom: 10px;
+      }
 
       .bd-mode-toggle {
         z-index: 1500;
@@ -119,7 +122,7 @@
 
     <!-- HEADER -->
     <?php
-    include "./inc/header.php";
+   // include "./inc/header.php";
     ?>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
@@ -157,18 +160,17 @@
       </ul>
     </div>
 
-    
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form method= "post" action="login.php">
     <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="email" class="form-control" name="usuario" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Usuario</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" name="contrasena" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -178,7 +180,8 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2, margen-inferior" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2" type="submit">Crear cuenta</button>
     <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
   </form>
 </main>
