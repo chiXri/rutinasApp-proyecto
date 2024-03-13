@@ -2,7 +2,7 @@
 <header data-bs-theme="dark">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <img src="./assets/img/logo.png" style="width: 20%; padding: 5px;"/>
+      <img src="/rutinasApp-proyecto/assets/img/logo.png" style="width: 10%; padding: 5px;"/>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
