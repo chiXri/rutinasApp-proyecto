@@ -122,7 +122,12 @@
 
     <!-- HEADER -->
     <?php
-   // include "./inc/header.php";
+    //include "./inc/header.php";
+    include_once "../lib/GestorBD.php";
+
+   
+    $conex= GestorBD::conectar();
+
     ?>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
