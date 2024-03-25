@@ -120,15 +120,22 @@
       </symbol>
     </svg>
 
-    <!-- HEADER -->
-    <?php
+    <!-- HEADER
+    /?php
     //include "./inc/header.php";
-    include_once "../lib/GestorBD.php";
+    //include_once "../lib/GestorBD.php";
 
    
-    $conex= GestorBD::conectar();
+    //$conex= GestorBD::conectar();
 
+    ?>-->
+
+        <!-- HEADER -->
+        <div class="header">
+    <?php
+      include "./inc/header.php";
     ?>
+    </div>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
