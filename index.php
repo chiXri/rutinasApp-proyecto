@@ -1,3 +1,3 @@
 <?php
-include "./vistas/inicio.php";
+include __DIR__ . "/vistas/inicio.php";
 ?>
