@@ -120,15 +120,15 @@
       </symbol>
     </svg>
 
-    <!-- HEADER
-    /?php
-    //include "./inc/header.php";
-    //include_once "../lib/GestorBD.php";
+    
+    <?php
+    include "autenticacion.php";
+
 
    
-    //$conex= GestorBD::conectar();
+    $conex= GestorBD::conectar(); ?>
 
-    ?>-->
+   
 
         <!-- HEADER -->
         <div class="header">
@@ -173,13 +173,15 @@
     </div>
 
 <main class="form-signin w-100 m-auto">
-  <form method= "post" action="login.php">
+
+<!-- Formulario de login -->
+  <form method= "POST" action="autenticacion.php">
     <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" name="usuario" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Usuario</label>
+      <input type="email" class="form-control" name="nombre" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Nombre</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control" name="contrasena" id="floatingPassword" placeholder="Password">
