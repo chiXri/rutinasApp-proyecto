@@ -123,10 +123,33 @@
     
     <?php
     include "autenticacion.php";
+    include "../lib/GestorBD.php";
 
 
    
     $conex= GestorBD::conectar(); ?>
+     <?php 
+
+       
+
+if (Autenticacion::estaAutenticado()){
+    header("location: ../index.php");
+}
+
+if (isset($_POST["usuario"]) && isset($_POST["contrasena"])){
+
+        if (Autenticacion::autenticar($_POST["usuario"], $_POST["contrasena"])){
+            header("location: ../index.php");
+            exit();
+        }
+
+        else{
+            echo "Usuario y/o contraseña incorrecto";
+        }
+
+}
+
+?>
 
    
 
@@ -175,7 +198,7 @@
 <main class="form-signin w-100 m-auto">
 
 <!-- Formulario de login -->
-  <form method= "POST" action="autenticacion.php">
+  <form method= "POST" action="login.php">
     <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 

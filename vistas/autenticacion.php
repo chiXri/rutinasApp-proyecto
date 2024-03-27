@@ -1,41 +1,48 @@
-
 <?php 
+include "../modelos/servicios/servicioAutenticacion.php";
 
-include "../lib/GestorBD.php";
-?>
+    class Autenticacion{
 
-<?php 
+        const claveUsuario = "usuario";
+        const cookieUsuario = "usuario";
 
-$conexion = GestorBD::conectar();
+        public static function estaAutenticado(){
+            return isset($_SESSION[self::claveUsuario]);
+        }
 
-if ($conexion){
+        public static function obtenerUsuario(){
 
-    echo "SE ha conectado";
+            if (self::estaAutenticado()){
 
-}
-else{
-    echo "No se conecta";
-}
+                return $_SESSION[self::claveUsuario];
+            }
+            else{
+                return '';
+            }
+        }
 
-$nombre = $_GET['nombre'];
-$contrasena = $_GET['contrasena'];
-$query = "SELECT * FROM usuario WHERE nombre= '$nombre' AND contrasena = '$contrasena'";
-$resultado = mysqli_query($conexion, $query);
+        public static function autenticar($usuario, $contrasena){
+            if (servicioAutenticacion::validarUsuarioContrasena($usuario, $contrasena)){
+                $_SESSION[self::claveUsuario] = $usuario;
 
-if (mysqli_num_rows($resultado) == 1){
+                setcookie(self::cookieUsuario, $usuario);
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 
-    session_start();
-    $_SESSION['nombre'] = $nombre;
+        public static function obtenerCookieUsuario(){
 
-    header('location: index.php');
-} 
-else{
-    echo "Nombre o contraseña incorrecta";
-}
-
-mysqli_close($conexion);
-
-
+            if (isset($_COOKIE[self::cookieUsuario])){
+                return $_COOKIE[self::cookieUsuario];
+            }
+            else{
+                return '';
+            }
+        }
+    }
 
 
 ?>
