@@ -1,6 +1,5 @@
 <?php 
 include "../modelos/servicios/servicioAutenticacion.php";
-
     class Autenticacion{
 
         const claveUsuario = "usuario";
@@ -21,18 +20,18 @@ include "../modelos/servicios/servicioAutenticacion.php";
             }
         }
 
-        public static function autenticar($usuario, $contrasena){
-            if (servicioAutenticacion::validarUsuarioContrasena($usuario, $contrasena)){
-                $_SESSION[self::claveUsuario] = $usuario;
-
-                setcookie(self::cookieUsuario, $usuario);
+        public static function autenticar($nombre, $contrasena){
+            if (ServicioAutenticacion::validarUsuarioContrasena($nombre, $contrasena)){
+                $_SESSION[self::claveUsuario] = $nombre;
+                setcookie(self::cookieUsuario, $nombre);
                 return true;
             }
             else{
+                echo "Autenticación fallida<br>";
                 return false;
             }
         }
-
+        
         public static function obtenerCookieUsuario(){
 
             if (isset($_COOKIE[self::cookieUsuario])){
@@ -43,6 +42,4 @@ include "../modelos/servicios/servicioAutenticacion.php";
             }
         }
     }
-
-
 ?>

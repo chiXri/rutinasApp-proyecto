@@ -1,3 +1,8 @@
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 <head>
@@ -111,60 +116,32 @@
             <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
           </symbol>
         </svg>
+        <main class="form-signin w-100 m-auto">
+    <form method="POST" action="../modelos/servicios/servicioRegistro.php">
+        <!-- Punto de depuración: Imagen del logo -->
+        <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 150px;">
+        
+        <!-- Punto de depuración: Título del formulario -->
+        <h1 class="h3 mb-3 fw-normal">Registro de cuenta</h1>
 
-        <?php
-    include "../lib/autenticacion.php";
-    include "../lib/GestorBD.php";
-    $conex = GestorBD::conectar();
+        <div class="form-floating">
+            <!-- Punto de depuración: Campo de entrada para el nombre de usuario -->
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de usuario" required>
+            <label for="nombre">Nombre de usuario</label>
+        </div>
+        
+        <div class="form-floating">
+            <!-- Punto de depuración: Campo de entrada para la contraseña -->
+            <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" required>
+            <label for="contrasena">Contraseña</label>
+        </div>
 
-    if (Autenticacion::estaAutenticado()){
-        echo "Usuario autenticado, redirigiendo a ../inicio.php";
-        header("location: ../vistas/inicio.php");
-        exit();
-    }
-
-    if (isset($_POST["nombre"]) && isset($_POST["contrasena"])){
-        echo "Usuario: " . $_POST["nombre"] . "<br>";
-        echo "Contraseña: " . $_POST["contrasena"] . "<br>";
-
-        if (Autenticacion::autenticar($_POST["nombre"], $_POST["contrasena"])){
-          echo '<script>window.location.href = "inicio.php";</script>';
-          exit();
-        } else {
-            echo "Usuario y/o contraseña incorrecto";
-        }
-    }
-?>
-
-    <main class="form-signin w-100 m-auto">
-        <!-- Formulario de inicio de sesión -->
-        <form method="POST" action="login.php">
-            <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 150px;">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="text" class="form-control" name="nombre" id="floatingInput" placeholder="nombre">
-                <label for="floatingInput">Nombre</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" name="contrasena" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-
-            <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-            </div>
-            <button class="btn btn-primary w-100 py-2, margen-inferior" type="submit" style="margin-bottom: 10px;">Sign in</button>
-            <a href="registro.php" class="btn btn-primary w-100 py-2">Crear cuenta</a>
-             <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
-        </form>
-    </main>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.getElementById("crearCuentaBtn").addEventListener("click", function() {
-        window.location.href = "registro.php";
-      });
-</script>
+        <!-- Punto de depuración: Botón de registro -->
+        <button class="btn btn-primary w-100 py-2" type="submit">Registrarse</button>
+        
+        <!-- Punto de depuración: Pie de página -->
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+    </form>
+</main>
 </body>
 </html>
