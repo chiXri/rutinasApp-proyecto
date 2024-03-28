@@ -122,7 +122,7 @@
 
     
     <?php
-    include "autenticacion.php";
+    include "../lib/autenticacion.php";
     include "../lib/GestorBD.php";
 
 
@@ -150,15 +150,6 @@ if (isset($_POST["usuario"]) && isset($_POST["contrasena"])){
 }
 
 ?>
-
-   
-
-        <!-- HEADER -->
-        <div class="header">
-    <?php
-      include "./inc/header.php";
-    ?>
-    </div>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
@@ -199,7 +190,7 @@ if (isset($_POST["usuario"]) && isset($_POST["contrasena"])){
 
 <!-- Formulario de login -->
   <form method= "POST" action="login.php">
-    <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px">
+    <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 50px;">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <div class="form-floating">
