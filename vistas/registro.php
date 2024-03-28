@@ -129,12 +129,47 @@ error_reporting(E_ALL);
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de usuario" required>
             <label for="nombre">Nombre de usuario</label>
         </div>
-        
+
+        <div class="form-floating">
+            <!-- Punto de depuración: Campo de entrada para la contraseña -->
+            <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" required>
+            <label for="apellidos">Apellidos</label>
+        </div>
+
+        <div class="form-floating">
+            <!-- Punto de depuración: Campo de entrada para la contraseña -->
+            <input type="number" class="form-control" name="edad" id="contrasena" placeholder="edad" required>
+            <label for="edad">Edad</label>
+        </div>
+
+        <div class="form-floating">
+        <!-- Campo de entrada para el género -->
+        <select class="form-select" name="genero" id="genero" required>
+            <option value="">Seleccionar género</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Otro</option>
+        </select>
+        <label for="genero">Género</label>
+    </div>
+
+        <div class="form-floating">
+            <!-- Punto de depuración: Campo de entrada para la contraseña -->
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+            <label for="email">Email</label>
+        </div>
+
         <div class="form-floating">
             <!-- Punto de depuración: Campo de entrada para la contraseña -->
             <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" required>
             <label for="contrasena">Contraseña</label>
         </div>
+
+        <div class="form-floating">
+        <!-- Campo de entrada para la confirmación de contraseña -->
+        <input type="password" class="form-control" name="confirmar_contrasena" id="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
+        <label for="confirmar_contrasena">Confirmar Contraseña</label>
+    </div>
 
         <!-- Punto de depuración: Botón de registro -->
         <button class="btn btn-primary w-100 py-2" type="submit">Registrarse</button>

@@ -6,7 +6,7 @@
             // Debugging: Mostrar el usuario y la contraseña recibidos
             echo "Validando usuario: $usuario, contraseña: $contrasena<br>";
             
-            $resultado = GestorBD::consultaLectura("SELECT contrasena FROM usuarios WHERE nombre = ?", $usuario);
+            $resultado = GestorBD::consultaLectura("SELECT contrasena FROM usuario WHERE nombre = ?", $usuario);
             var_dump($resultado); // Debugging: Mostrar el resultado de la consulta
         
             $hash = hash('sha256', $contrasena);
