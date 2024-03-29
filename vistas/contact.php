@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -90,7 +91,7 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <!-- HOME -->
       <li class="nav-item">
-        <a href="../index.php" class="nav-link active" aria-current="page">
+        <a href="./inicio.php" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Inicio
         </a>
