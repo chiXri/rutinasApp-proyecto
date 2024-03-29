@@ -20,7 +20,7 @@ if (isset($_POST["nombre"]) && isset($_POST["contrasena"]) && isset($_POST["apel
         exit();
     }
 
-    // Validar que el nombre y los apellidos contengan solo letras y no estén vacíos
+    // Validar que el nombre y los apellidos contengan solo letras y espacios y no estén vacíos
 if (!preg_match("/^[a-zA-Z ]+$/", $nombre)) {
     $errores[] = "Error: El nombre solo puede contener letras.";
 }
@@ -68,7 +68,7 @@ if (!empty($errores)) {
     }
     
     // Vincular los parámetros y ejecutar la consulta
-    $statement->bind_param("ssisis", $nombre, $apellidos, $edad, $email, $genero, $hash_contrasena);
+    $statement->bind_param("ssisss", $nombre, $apellidos, $edad, $email, $genero, $hash_contrasena);
     if ($statement->execute()) {
         echo "Usuario registrado exitosamente.<br>";
         // Redirige al usuario a la página de inicio de sesión mediante un enlace
