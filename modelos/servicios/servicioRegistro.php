@@ -87,9 +87,10 @@ if (!empty($errores)) {
     // Vincular los parámetros y ejecutar la consulta
     $statement->bind_param("ssisss", $nombre, $apellidos, $edad, $email, $genero, $hash_contrasena);
     if ($statement->execute()) {
-        echo "Usuario registrado exitosamente.<br>";
-        // Redirige al usuario a la página de inicio de sesión mediante un enlace
-        echo '<p>Usuario registrado exitosamente. <a href="/rutinasApp-proyecto/vistas/login.php">Ir a iniciar sesión</a></p>';
+
+        header("location: /rutinasApp-proyecto/vistas/login.php");
+       
+        
     } else {
         echo "Error al registrar el usuario: " . $statement->error . "<br>";
     }
