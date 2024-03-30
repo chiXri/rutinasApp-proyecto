@@ -1,0 +1,17 @@
+#container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column; /* Organizar elementos en columna */
+    padding-bottom: 5px;
+}
+
+.caja {
+    width: 50%;
+    height: auto;
+    border: 3px solid black;
+    color: black;
+    margin: 0 auto;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+}
