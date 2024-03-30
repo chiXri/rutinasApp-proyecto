@@ -2,7 +2,7 @@
 <html lang="es" data-bs-theme="auto">
 
 <head>
-  <script src="../assets/js/color-modes.js"></script>
+  <script src="/rutinasApp-proyecto/assets/js/color-modes.js"></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,13 +15,19 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/rutinasApp-proyecto/assets/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../assets/css/carousel.css" rel="stylesheet">
+  <link href="/rutinasApp-proyecto/assets/css/carousel.css" rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- HEADER -->
+  <?php
+  include "inc/header.php";
+  ?>
+
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
       <path
@@ -90,10 +96,6 @@
     </ul>
   </div>
 
-  <!-- HEADER -->
-  <?php
-  include "../vistas/inc/header.php";
-  ?>
 
   <main>
 
@@ -115,7 +117,7 @@
               <h1>¡Comienza con Fuerza Tu Viaje Épico!</h1>
               <p class="opacity-75">En el camino hacia el éxito, cada pequeño paso cuenta. Descubre el poder de tus
                 elecciones diarias y cómo, paso a paso, te acercas a grandes logros.</p>
-              <p><a class="btn btn-lg btn-primary" href="./vistas/login.php">Registrate</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/rutinasApp-proyecto/vistas/registro.php">Registrate</a></p>
             </div>
           </div>
         </div>
@@ -169,7 +171,7 @@
     <!-- Three columns of text below  the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img src="../assets/img/crecimientoPersonal.png" alt="Crecimiento Personal"
+        <img src="/rutinasApp-proyecto/assets/img/crecimientoPersonal.png" alt="Crecimiento Personal"
           class="bd-placeholder-img rounded-circle" width="140" height="140">
         <h2 class="fw-normal">Crecimiento Personal</h2>
         <p>Descubre rutinas que fortalecerán tu mente y fomentarán tu desarrollo personal. Desde prácticas de
@@ -178,7 +180,7 @@
         <p><a class="btn btn-lg btn-primary" href="#">Ver más &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="../assets/img/bienestar.png" alt="Bienestar" class="bd-placeholder-img rounded-circle" width="140"
+        <img src="/rutinasApp-proyecto/assets/img/bienestar.png" alt="Bienestar" class="bd-placeholder-img rounded-circle" width="140"
           height="140">
         <h2 class="fw-normal">Bienestar</h2>
         <p>Explora rutinas diseñadas para mejorar tu bienestar físico y emocional. Desde ejercicios y actividades al
@@ -187,7 +189,7 @@
         <p><a class="btn btn-lg btn-primary" href="#">Ver más &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="../assets/img/productividad.png" alt="productividad" class="bd-placeholder-img rounded-circle"
+        <img src="/rutinasApp-proyecto/assets/img/productividad.png" alt="productividad" class="bd-placeholder-img rounded-circle"
           width="140" height="140">
         <h2 class="fw-normal">Productividad</h2>
         <p>Optimiza tu día con rutinas eficientes que abordan tareas y responsabilidades diarias. Desde la mañana hasta
@@ -201,11 +203,11 @@
     <hr class="featurette-divider">
 
   </main>
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
   <!-- FOOTER -->
   <?php
-    include "../vistas/inc/footer.php";
+    include "inc/footer.php";
   ?>
 
 </body>
