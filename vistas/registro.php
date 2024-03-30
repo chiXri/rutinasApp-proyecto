@@ -117,7 +117,7 @@ error_reporting(E_ALL);
           </symbol>
         </svg>
         <main class="form-signin w-100 m-auto">
-    <form method="POST" action="../modelos/servicios/servicioRegistro.php">
+    <form method="POST" action="../modelos/modeloRegistro.php">
         <!-- Punto de depuración: Imagen del logo -->
         <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 150px;">
         
@@ -170,6 +170,25 @@ error_reporting(E_ALL);
         <input type="password" class="form-control" name="confirmar_contrasena" id="confirmar_contrasena" placeholder="Confirmar Contraseña" required>
         <label for="confirmar_contrasena">Confirmar Contraseña</label>
     </div>
+    <?php
+// Verificar si hay errores en la URL
+if (isset($_GET['errores'])) {
+    // Decodificar los errores
+    $errores = json_decode(urldecode($_GET['errores']), true);
+    // Mostrar los errores debajo del formulario
+    echo '<div class="alert alert-danger" role="alert">';
+    echo '<ul>';
+    foreach ($errores as $error) {
+        echo "<li>$error</li>";
+    }
+    echo '</ul>';
+    echo '</div>';
+}
+?>
+
+
+
+  
 
         <!-- Punto de depuración: Botón de registro -->
         <button class="btn btn-primary w-100 py-2" type="submit">Registrarse</button>

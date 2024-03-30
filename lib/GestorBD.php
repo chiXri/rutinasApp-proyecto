@@ -13,6 +13,18 @@
          return $conexion;
     }
 
+    public static function desconectar(){
+
+        $conexion = self::conectar();
+
+        if ($conexion){
+            return $conexion.close();
+        }
+
+
+        }
+    
+
     private static function preparar($conexion, $consulta, $parametros){
         
       $preparada = $conexion->prepare($consulta);
