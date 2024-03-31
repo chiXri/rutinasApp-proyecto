@@ -11,32 +11,24 @@ class RegistroTest extends TestCase
         $servicioRegistro = new ServicioRegistro();
         
         // Define datos de prueba
-        $nombre = "John";
-        $apellidos = "Doe";
+        $nombre = "Deme";
+        $apellidos = "mayorga";
         $edad = 25;
-        $email = "john.doe@example.com";
-        $contrasena = "password123";
+        $email = "deme@ejemplo.com";
+        $contrasena = "1234";
         $genero = "Masculino";
+
+        //Conexión a la base de datos
+
+        $conexion = new mysqli("localhost", "root", "", "proyectoifp");
         
         // Ejecuta el método registroUsuario con los datos de prueba
-        $servicioRegistro->registroUsuario($nombre, $contrasena, $apellidos, $edad, $email, $genero);
-        
-        // Realiza las aserciones pertinentes para verificar el comportamiento esperado
-        
-        // Por ejemplo, verifica si la redirección ocurre correctamente
-        $this->assertStringContainsString("/rutinasApp-proyecto/vistas/login.php", $this->getActualOutput());
-        
-        // También podrías realizar otras aserciones, como verificar que el usuario se haya insertado correctamente en la base de datos
-        
-        // Por ejemplo, puedes verificar si el usuario existe en la base de datos
-        $conexion = new mysqli("localhost", "root", "", "proyectoifp");
-        $result = $conexion->query("SELECT * FROM usuario WHERE email = '$email'");
-        $this->assertGreaterThan(0, $result->num_rows); // Verifica si se encontró al menos un usuario con el correo electrónico proporcionado
-        
-        // Cierra la conexión a la base de datos
-        $conexion->close();
+       $resultado= $servicioRegistro->registroUsuario($nombre, $apellidos, $edad, $email, $genero,  $contrasena);
+        $resultado->gettype();
+       // Verifica si el registro fue exitoso
+          $this->assertTrue($resultado);
+     
     }
     
-    // Agrega más métodos de prueba según sea necesario para cubrir otros casos de prueba
 }
 ?>

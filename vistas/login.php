@@ -114,7 +114,7 @@
 
         <?php
     include "../lib/autenticacion.php";
-    include "../lib/GestorBD.php";
+    include_once "../lib/GestorBD.php";
     $conex = GestorBD::conectar();
 
     if (Autenticacion::estaAutenticado()){
