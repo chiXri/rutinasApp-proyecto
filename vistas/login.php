@@ -128,7 +128,7 @@
         echo "Contraseña: " . $_POST["contrasena"] . "<br>";
 
         if (Autenticacion::autenticar($_POST["nombre"], $_POST["contrasena"])){
-          echo '<script>window.location.href = "inicio.php";</script>';
+          echo '<script>window.location.href = "inicioLoggin.php";</script>';
           exit();
         } else {
             echo "Usuario y/o contraseña incorrecto";

@@ -192,6 +192,10 @@ if (isset($_GET['errores'])) {
 
         <!-- Punto de depuración: Botón de registro -->
         <button class="btn btn-primary w-100 py-2" type="submit">Registrarse</button>
+        <!-- Boton por si ya tiene cuenta -->
+        <p><br/>Ya tienes cuenta?</p>
+        <a href="login.php" class="btn btn-primary w-100 py-2">Sign in</a>
+
         
         <!-- Punto de depuración: Pie de página -->
         <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
