@@ -91,6 +91,13 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      .error-message {
+            color: white;
+            background-color: #dc3545;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
     </style>
 
     <link href="../assets/css/sign-in.css" rel="stylesheet">
@@ -116,6 +123,7 @@
     include "../lib/autenticacion.php";
     include_once "../lib/GestorBD.php";
     $conex = GestorBD::conectar();
+    $error_message = "";
 
     if (Autenticacion::estaAutenticado()){
         echo "Usuario autenticado, redirigiendo a ../inicio.php";
@@ -124,14 +132,13 @@
     }
 
     if (isset($_POST["nombre"]) && isset($_POST["contrasena"])){
-        echo "Usuario: " . $_POST["nombre"] . "<br>";
-        echo "Contraseña: " . $_POST["contrasena"] . "<br>";
+        
 
         if (Autenticacion::autenticar($_POST["nombre"], $_POST["contrasena"])){
           echo '<script>window.location.href = "inicioLoggin.php";</script>';
           exit();
         } else {
-            echo "Usuario y/o contraseña incorrecto";
+          $error_message = "Usuario y/o contraseña incorrectos";
         }
     }
 ?>
@@ -142,6 +149,7 @@
             <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 150px;">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
+
             <div class="form-floating">
                 <input type="text" class="form-control" name="nombre" id="floatingInput" placeholder="nombre">
                 <label for="floatingInput">Nombre</label>
@@ -150,6 +158,9 @@
                 <input type="password" class="form-control" name="contrasena" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
+                <?php if (!empty($error_message)): ?>
+                <div class="error-message"><?php echo $error_message; ?></div>
+                <?php  endif; ?>
 
             <div class="form-check text-start my-3">
                 <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
