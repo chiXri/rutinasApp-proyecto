@@ -2,19 +2,45 @@
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column; /* Organizar elementos en columna */
+    flex-direction: column;
     padding-bottom: 5px;
     background-color: #FFA366;
     padding-top: 30px;
     max-height: auto;
     overflow-y: auto;
 }
-
 .caja {
-    width: 50%;
+    width: 90%;
     height: auto;
     border: 3px solid black;
     color: black;
     margin: 0 auto;
     margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.349);
+}
+#nUsuario{
+    border-bottom: 3px solid black;
+    text-align: right;
+}
+#publicacion{
+    width: auto;
+    height: auto;
+}
+#textoPublicacion{
+    background-color: #ffffff00;
+}
+button{
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background-color: rgb(62, 78, 107);
+}
+
+#contenedorBotones{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
