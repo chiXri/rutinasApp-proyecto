@@ -22,7 +22,29 @@
        
       </div>
       -->
-      <a href="/rutinasApp-proyecto/vistas/login.php"><button>Iniciar Sesión</button></a>
+
+      <?php
+session_start();
+
+// Función para comprobar si el usuario está autenticado
+function usuario_autenticado() {
+    return isset($_SESSION['usuario']); 
+}
+?>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <?php if (usuario_autenticado()): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/logout.php">Cerrar Sesión</a>
+                </li>
+            <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/login.php">Iniciar Sesión</a>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
     </div>
 
   </nav>
