@@ -8,6 +8,7 @@ class Autenticacion{
 
     public static function estaAutenticado(){
         // Debugging: Mostrar si el usuario está autenticado
+        session_start();
         return isset($_SESSION[self::claveUsuario]);
     }
 

@@ -34,7 +34,9 @@
         <?php
     include "../lib/autenticacion.php";
     include_once "../lib/GestorBD.php";
-    $conex = GestorBD::conectar();
+    $conex = new GestorBD();
+
+    $conex->conectar();
     $error_message = "";
 
     if (Autenticacion::estaAutenticado()){
@@ -47,10 +49,10 @@
         
 
         if (Autenticacion::autenticar($_POST["nombre"], $_POST["contrasena"])){
-          echo '<script>window.location.href = "inicioLoggin.php";</script>';
-          exit();
+          header("location: ../vistas/inicioLoggin.php");
+          //exit();
         } else {
-          $error_message = "Usuario y/o contraseña incorrectos";
+           $error_message = "Usuario y/o contraseña incorrectos";
         }
     }
 ?>
