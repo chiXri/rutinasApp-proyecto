@@ -24,6 +24,7 @@
   
   <!-- SIDEBAR -->
   <?php
+  include "inc/header.php";
   include("inc/navigatorColum.php");
   ?>
 

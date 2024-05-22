@@ -38,6 +38,9 @@ function usuario_autenticado() {
                 <li class="nav-item">
                     <a class="nav-link" href="/rutinasApp-proyecto/vistas/logout.php">Cerrar Sesión</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/contact.php">Contacto</a>
+                </li>
             <?php else: ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/rutinasApp-proyecto/vistas/login.php">Iniciar Sesión</a>
