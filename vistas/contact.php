@@ -1,5 +1,9 @@
 
-
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -22,6 +26,7 @@
   <body>
 
   <?php
+  include "inc/header.php";
   include "inc/navigatorColum.php";
   ?>
   <!-- FORM -->
@@ -48,19 +53,38 @@
     </div>
     <div class="contact-form">
       <h2>Formulario de Contacto</h2>
-      <form action="#" method="POST" id="formularioContacto">
+      <form action="../modelos/modeloContacto.php" method="POST" id="formularioContacto">
           <div class="form-group">
-              <label for="nombre">Nombre:</label>
+              <label for="nombre">Nombre *</label>
               <input type="text" id="nombre" name="nombre" required>
           </div>
           <div class="form-group">
-              <label for="email">Email:</label>
+              <label for="email">Email *</label>
               <input type="email" id="email" name="email" required>
           </div>
           <div class="form-group">
-              <label for="mensaje">Mensaje:</label>
+              <label for="mensaje">Mensaje *</label>
               <textarea id="mensaje" name="mensaje" required></textarea>
           </div>
+
+          <?php
+// Verificar si hay errores en la URL
+if (isset($_GET['errores'])) {
+    // Decodificar los errores
+    $errores = json_decode(urldecode($_GET['errores']), true);
+    // Mostrar los errores debajo del formulario
+    echo '<div class="alert alert-danger" role="alert">';
+    echo '<ul>';
+    foreach ($errores as $error) {
+        echo "<li>$error</li>";
+    }
+    echo '</ul>';
+    echo '</div>';
+}
+?>
+
+
+      
           <button type="submit">Enviar</button>
       </form>
   </div>
