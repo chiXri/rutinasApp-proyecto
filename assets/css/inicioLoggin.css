@@ -17,17 +17,50 @@
     margin: 0 auto;
     margin-bottom: 10px;
     background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 4px;
 }
-#nUsuario{
+#cabeceraPublicacion {
+    display: flex;
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+  }
+  #infoCabecera {
+    width: 100%; /* Asegurarse que ocupe todo el ancho */
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre los elementos */
+  }
+  #separadorCabecera {
+    width: 95%; /* Ajustar según sea necesario */
     border-bottom: 3px solid black;
-    text-align: right;
+    margin-top: 5px; /* Espacio entre la información y el separador */
+  }
+#nUsuario{
+    width: auto;
+    height: auto;
+    margin: 6px;
+}
+#fechaPublicacion{
+    width: auto;
+    height: auto;
+    margin: 6px;
 }
 #publicacion{
     width: auto;
     height: auto;
 }
+
+#tituloPublicacion{
+    font-size: 1.4rem;
+    margin: 6px;
+}
+#separadorPublicacion {
+    width: 95%; /* Ajustar según sea necesario */
+    border-bottom: 3px solid black;
+    margin-top: 5px; /* Espacio entre la información y el separador */
+    margin: 0 auto;
+  }
 #textoPublicacion{
-    background-color: #ffffff00;
+    margin: 6px;
 }
 button{
     width: auto;

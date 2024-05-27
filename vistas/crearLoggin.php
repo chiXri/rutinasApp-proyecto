@@ -21,35 +21,45 @@
   </head>
 
   <body>
-  
+
   <!-- SIDEBAR -->
   <?php
-  include "inc/header.php";
   include("inc/navigatorColum.php");
   ?>
 
 
   <!-- BODY PUBLICACIONES -->
   <div id="container">
+
+  <!-- CABECERA CREAR PUBLICACIONES -->
+  <div id="cabeceraLoggin">
+    CREAR PUBLICACION
+  </div>
+  <div id="barraCab"></div>
+
     <div class="caja">
-      <div id="cabeceraPublicacion">
-      <div id="infoCabecera">
-        <div id="nUsuario">Nombre Usuario</div>
-        <div id="fechaPublicacion">Fecha publicación</div>
-      </div>
-      <div id="separadorCabecera"></div>
-      </div>
+      <div id="nUsuario">Jefferson V.</div>
       <div id="publicacion">
-        <div id="tituloPublicacion">Titulo</div>
-        <!-- <div id="separadorPublicacion"></div> -->
-        <div id="textoPublicacion">Texto ejemplo</div>
+        <textarea id="textoPublicacion"></textarea>
       </div>
     </div>
     <div id="contenedorBotones">
       <button id="publicar">PUBLICAR</button>
       <button id="borrar">BORRAR</button>
+    </div>
+
+    <div class="publicaciones">
+      <div id="nUsuario">Jefferson V.</div>
+      <div id="publicacion">
+        Esta es una publicación de ejemplo
+      </div>
+    </div>
+    <div id="contenedorBotones">
+      <button id="borrar">BORRAR</button>
     </div>  
   </div>
+
+
 <script>
   // Evento al hacer scroll en la página
 window.addEventListener("scroll", function() {
