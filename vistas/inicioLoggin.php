@@ -26,6 +26,7 @@
   <?php
   include "inc/header.php";
   include("inc/navigatorColum.php");
+  include_once "../modelos/servicioPublicaciones.php"
   ?>
 
 
@@ -47,6 +48,7 @@
     </div>
     <div id="contenedorBotones">
       <button id="publicar">PUBLICAR</button>
+      <?php include_once "../modelos/servicioPublicaciones.php"?>
       <button id="borrar">BORRAR</button>
     </div>  
   </div>
