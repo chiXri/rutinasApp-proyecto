@@ -1,3 +1,10 @@
+<?php
+include_once __DIR__ . "/../modelos/servicios/servicioPublicaciones.php";
+
+// Obtener publicaciones
+$publicaciones = servicioPublicaciones::obtenerPublicaciones();
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -21,17 +28,17 @@
   </head>
 
   <body>
+
   
   <!-- SIDEBAR -->
   <?php
   include "inc/header.php";
   include("inc/navigatorColum.php");
-  include_once "../modelos/servicioPublicaciones.php"
   ?>
 
 
   <!-- BODY PUBLICACIONES -->
-  <div id="container">
+<!--   <div id="container">
     <div class="caja">
       <div id="cabeceraPublicacion">
       <div id="infoCabecera">
@@ -41,17 +48,37 @@
       <div id="separadorCabecera"></div>
       </div>
       <div id="publicacion">
-        <div id="tituloPublicacion">Titulo</div>
+        <div id="tituloPublicacion">Titulo</div> -->
         <!-- <div id="separadorPublicacion"></div> -->
-        <div id="textoPublicacion">Texto ejemplo</div>
+<!--         <div id="textoPublicacion">
+        <h1>Publicaciones</h1>
+        
+
+        </div>
       </div>
     </div>
     <div id="contenedorBotones">
       <button id="publicar">PUBLICAR</button>
-      <?php include_once "../modelos/servicioPublicaciones.php"?>
       <button id="borrar">BORRAR</button>
     </div>  
+  </div> -->
+
+  <div id="contenedorPublicaciones">
+    <p>RUTINAS</p>
+    <?php if(count($publicaciones) > 0): ?>
+    <?php foreach($publicaciones as $publicacion): ?>
+      <?php
+      // Incluir la plantilla de visualización de publicaciones
+      include_once __DIR__ . "/../modelos/servicios/servicioVerPublicaciones.php";
+      ?>
+    <?php endforeach; ?>
+    <?php else: ?>
+      <p>No hay publicaciones disponibles.</p>
+    <?php endif; ?>
   </div>
+
+
+  
 <script>
   // Evento al hacer scroll en la página
 window.addEventListener("scroll", function() {
