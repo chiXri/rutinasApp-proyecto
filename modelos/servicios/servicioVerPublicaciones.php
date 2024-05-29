@@ -6,7 +6,7 @@
             <div id="cabeceraPublicacion">
                 <div id="infoCabecera">
                     <div id="nUsuario"><?php echo $publicacion->userId; ?></div>
-                    <div id="fechaPublicacion"><?php echo $publicacion->fecha->format('Y-m-d H:i:s'); ?></div>
+                    <div id="fechaPublicacion"><?php echo $publicacion->fecha->format('d-m-Y - H:i'); ?></div>
                 </div>
                 <div id="separadorCabecera"></div>
             </div>

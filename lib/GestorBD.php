@@ -55,11 +55,10 @@
       return $retorno;
   }
 
-  public static function consultaEscritura ($consulta, ...$parametros){
+  public static function consultaEscritura ($consulta){
       $conexion = self::conectar();
 
-      $preparada = self::preparar($conexion, $consulta, $parametros);
-      $preparada->execute();
+      $conexion->query($consulta);
 
   }
  }

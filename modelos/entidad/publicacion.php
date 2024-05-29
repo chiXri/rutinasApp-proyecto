@@ -31,6 +31,10 @@ class Publicacion{
         
     }
 
+    public static function crearPublicacion(Publicacion $publicacion){
+
+    }
+
 
     
 }
