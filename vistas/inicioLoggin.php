@@ -2,7 +2,7 @@
 include_once __DIR__ . "/../modelos/servicios/servicioPublicaciones.php";
 
 // Obtener publicaciones
-$publicaciones = servicioPublicaciones::obtenerPublicaciones();
+// $publicaciones = servicioPublicaciones::obtenerPublicaciones();
 ?>
 
 <!doctype html>
@@ -61,7 +61,6 @@ $publicaciones = servicioPublicaciones::obtenerPublicaciones();
       <button id="publicar">PUBLICAR</button>
       <button id="borrar">BORRAR</button>
     </div>  
-  </div> -->
 
   <div id="contenedorPublicaciones">
     <p>RUTINAS</p>
@@ -74,7 +73,7 @@ $publicaciones = servicioPublicaciones::obtenerPublicaciones();
     <?php endforeach; ?>
     <?php else: ?>
       <p>No hay publicaciones disponibles.</p>
-    <?php endif; ?>
+    <?php endif; ?>  
   </div>
 
 

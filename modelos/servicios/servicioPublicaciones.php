@@ -1,29 +1,39 @@
 <?php
-include_once __DIR__ . "/../../lib/GestorBD.php";
-include_once __DIR__ . "/../entidad/publicacion.php";
-
 
     class servicioPublicaciones{
 
-        /** FUNCION PARA OBTENER LAS PUBLICACIONES DE LA BD */
-        public static function obtenerPublicaciones(){
-            $resultado = GestorBD::consultaLectura("SELECT user_id, titulo, descripcion, fechaHora, imagen FROM rutina");
-            
-            $retorno=array();
-            foreach($resultado as $fila){
-                $fecha = new DateTime($fila["fechaHora"]);
-                $publicacion= new Publicacion($fila["user_id"], $fila["titulo"], $fila["descripcion"],$fecha, $fila["imagen"] );
+        public function crearPublicacion($id_usuario, $titulo, $descripcion, $fecha){
 
-                array_push($retorno,$publicacion);
-            }
+            // Realizar la conexión a la base de datos
+        $conexion = new mysqli("localhost", "root", "", "proyectoifp");
 
-/*             var_dump($retorno);
- */
-            return $retorno;
+        // Verificar la conexión
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
         }
-    }
-        /** FUNCION PARA INSERTAR OFERTAS EN LA BD */
 
-/*     $retorno=servicioPublicaciones::obtenerPublicaciones();
- */
+        // Consulta SQL para insertar el formulario de contacto en la base de datos
+        $sql = "INSERT INTO rutina (user_id, titulo, descripcion, fechaHora) VALUES (?, ?, ?, ?)";
+
+
+        // Preparar la consulta
+       $statement = $conexion->prepare($sql);
+       if (!$statement) {
+           die("Error al preparar la consulta: " . $conexion->error);
+       }
+
+       $statement->bind_param("isss",$id_usuario, $titulo, $descripcion,$fecha);
+
+       $statement->execute();
+
+       $statement->close();
+
+       $conexion->close();
+
+
+        }
+
+       
+    }
+    
 ?>

@@ -29,24 +29,13 @@
 
   <!-- CABECERA CREAR PUBLICACIONES -->
 
-  <?php
-    include_once "../modelos/entidad/publicacion.php";
-    $publicacion = Publicacion::verPublicaciones();
-  ?>
-  <form method="POST" action="crearLoggin.php">
-    <?php if(isset($_POST["publicar"])): ?>
-      <h2>Publicada</h2>
-    <?php 
-      Publicacion::crearPublicacion($publicacion);
-    ?>
-    <?php endif; ?>
-    <div id="contenedorPublicaciones">
       CREAR PUBLICACION
+      <form method="POST" action="../modelos/modeloCrearPubli.php">
       <div id="container">
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
-                      <div id="nUsuario" name="usuarioId">6</div>
+                      <div id="nUsuario" name="usuarioId"><?php echo "User_ID" ?></div>
                       <div id="fechaPublicacion" name="fechaHora"></div>
                   </div>
                   <div id="separadorCabecera"></div>
@@ -57,8 +46,8 @@
               </div>
           </div>
           <div id="contenedorBotones">
-              <button id="publicar" value="publicar">PUBLICAR</button>
-              <button id="borrar">BORRAR</button>
+              <button id="publicar" type="submit">PUBLICAR</button>
+              <!-- <button id="borrar">BORRAR</button> -->
           </div>
       </div>
     </div>
