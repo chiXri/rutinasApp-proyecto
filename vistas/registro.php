@@ -117,6 +117,8 @@ error_reporting(E_ALL);
           </symbol>
         </svg>
         <main class="form-signin w-100 m-auto">
+
+        
     <form method="POST" action="../modelos/modeloRegistro.php">
         <!-- Punto de depuración: Imagen del logo -->
         <img class="mb-4" src="../assets/img/logo.png" alt="" width="300px" style="margin-top: 150px;">

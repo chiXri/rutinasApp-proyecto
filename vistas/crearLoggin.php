@@ -29,17 +29,7 @@
 
   <!-- CABECERA CREAR PUBLICACIONES -->
 
-  <?php
-    include_once "../modelos/entidad/publicacion.php";
-    $publicacion = Publicacion::verPublicaciones();
-  ?>
-  <form method="POST" action="crearLoggin.php">
-    <?php if(isset($_POST["publicar"])): ?>
-      <h2>Publicada</h2>
-    <?php 
-      Publicacion::crearPublicacion($publicacion);
-    ?>
-    <?php endif; ?>
+  <form method="POST" action="../modelos/modeloCrearLoggin.php">
     <div id="contenedorPublicaciones">
       CREAR PUBLICACION
       <div id="container">
