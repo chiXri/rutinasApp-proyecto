@@ -23,10 +23,7 @@
 
 <body>
 
-  <!-- HEADER -->
-  <?php
-  include "inc/header.php";
-  ?>
+  
 
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
