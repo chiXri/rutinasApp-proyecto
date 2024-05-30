@@ -1,8 +1,11 @@
 <?php
-include_once __DIR__ . "/../modelos/servicios/servicioPublicaciones.php";
+    include_once __DIR__ . "/../modelos/servicios/servicioPublicaciones.php";
 
-// Obtener publicaciones
-// $publicaciones = servicioPublicaciones::obtenerPublicaciones();
+    // Crear una instancia del servicio
+    $servicioPublicaciones = new servicioPublicaciones();
+
+    // Obtener publicaciones
+    $publicaciones = $servicioPublicaciones->listarPublicaciones();
 ?>
 
 <!doctype html>
@@ -35,46 +38,22 @@ include_once __DIR__ . "/../modelos/servicios/servicioPublicaciones.php";
   include "inc/header.php";
   include("inc/navigatorColum.php");
   ?>
-
-
-  <!-- BODY PUBLICACIONES -->
-<!--   <div id="container">
-    <div class="caja">
-      <div id="cabeceraPublicacion">
-      <div id="infoCabecera">
-        <div id="nUsuario">Nombre Usuario</div>
-        <div id="fechaPublicacion">Fecha publicación</div>
-      </div>
-      <div id="separadorCabecera"></div>
-      </div>
-      <div id="publicacion">
-        <div id="tituloPublicacion">Titulo</div> -->
-        <!-- <div id="separadorPublicacion"></div> -->
-<!--         <div id="textoPublicacion">
-        <h1>Publicaciones</h1>
-        
-
-        </div>
-      </div>
-    </div>
-    <div id="contenedorBotones">
-      <button id="publicar">PUBLICAR</button>
-      <button id="borrar">BORRAR</button>
-    </div>  
-
+  <!-- SE MUESTRAN LAS PUBLICACIONES DE LA BASE DE DATOS  -->
+  
   <div id="contenedorPublicaciones">
-    <p>RUTINAS</p>
-    <?php if(count($publicaciones) > 0): ?>
-    <?php foreach($publicaciones as $publicacion): ?>
-      <?php
-      // Incluir la plantilla de visualización de publicaciones
-      include_once __DIR__ . "/../modelos/servicios/servicioVerPublicaciones.php";
-      ?>
-    <?php endforeach; ?>
-    <?php else: ?>
-      <p>No hay publicaciones disponibles.</p>
-    <?php endif; ?>  
-  </div>
+        <p>RUTINAS</p>
+        <?php if (count($publicaciones) > 0): ?>
+          <?php foreach ($publicaciones as $publicacion): ?>
+            <div class="publicacion">
+              <h2><?php echo htmlspecialchars($publicacion['titulo']); ?></h2>
+              <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
+              <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
+            </div>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <p>No hay publicaciones disponibles.</p>
+        <?php endif; ?>  
+      </div>
 
 
   

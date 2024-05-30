@@ -4,31 +4,65 @@
 
         public function crearPublicacion($id_usuario, $titulo, $descripcion, $fecha){
 
-            // Realizar la conexión a la base de datos
-        $conexion = new mysqli("localhost", "root", "", "proyectoifp");
+                // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
 
-        // Verificar la conexión
-        if ($conexion->connect_error) {
-            die("Error de conexión: " . $conexion->connect_error);
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+
+            // Consulta SQL para insertar la rutina en la base de datos
+            $sql = "INSERT INTO rutina (user_id, titulo, descripcion, fechaHora) VALUES (?, ?, ?, ?)";
+
+
+            // Preparar la consulta
+        $statement = $conexion->prepare($sql);
+        if (!$statement) {
+            die("Error al preparar la consulta: " . $conexion->error);
         }
 
-        // Consulta SQL para insertar el formulario de contacto en la base de datos
-        $sql = "INSERT INTO rutina (user_id, titulo, descripcion, fechaHora) VALUES (?, ?, ?, ?)";
+        $statement->bind_param("isss",$id_usuario, $titulo, $descripcion,$fecha);
+
+        $statement->execute();
+
+        $statement->close();
+
+        $conexion->close();
 
 
-        // Preparar la consulta
-       $statement = $conexion->prepare($sql);
-       if (!$statement) {
-           die("Error al preparar la consulta: " . $conexion->error);
-       }
+        }
 
-       $statement->bind_param("isss",$id_usuario, $titulo, $descripcion,$fecha);
 
-       $statement->execute();
+        public function listarPublicaciones(){
 
-       $statement->close();
+               // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
 
-       $conexion->close();
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+
+            // Consulta SQL para listar las rutinas en la base de datos
+            $sql = "SELECT * FROM rutina";
+
+            $result = $conexion->query($sql);
+
+        // Verificar si hay resultados
+        if ($result->num_rows > 0) {
+            $publicaciones = array();
+            while ($row = $result->fetch_assoc()) {
+                $publicaciones[] = $row;
+            }
+            return $publicaciones;
+        } else {
+            return array();
+        }
+
+        $conexion->close();
+
+
 
 
         }
