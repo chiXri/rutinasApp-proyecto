@@ -31,8 +31,20 @@ class Publicacion{
         
     }
 
-    public static function crearPublicacion(Publicacion $publicacion){
-
+    public static function crearPublicacion($publicacion) {
+        // Formatear la fecha correctamente
+        $fecha = $publicacion->fecha->format("Y-m-d H:i:s");
+    
+        // Crear la consulta SQL corregida
+        $consulta = "INSERT INTO `rutina`(`user_id`, `titulo`, `descripcion`, `fechaHora`)
+                     VALUES ('$publicacion->userId', '$publicacion->titulo', '$publicacion->descripcion', '$fecha')";
+    
+        // Ejecutar la consulta y manejar errores
+        $resultado = GestorBD::consultaEscritura($consulta);
+    
+        if (!$resultado) {
+            die('Error en la consulta: ' . GestorBD::obtenerError());
+        }
     }
 
 

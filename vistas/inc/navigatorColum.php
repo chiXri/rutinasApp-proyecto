@@ -91,7 +91,7 @@
       </li>
       <!-- CREATE -->
       <li>
-        <a href="#" class="nav-link text-white">
+        <a href="../vistas/crearLoggin.php" class="nav-link text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#create"/></svg>
           Crear
         </a>

@@ -30,36 +30,30 @@
   <!-- CABECERA CREAR PUBLICACIONES -->
 
   <?php
-    include_once "../modelos/entidad/publicacion.php";
-    $publicacion = Publicacion::verPublicaciones();
+    include_once __DIR__ . "/../modelos/entidad/publicacion.php";
+    $publicacion=Publicacion::crearPublicacion();
   ?>
-  <form method="POST" action="crearLoggin.php">
-    <?php if(isset($_POST["publicar"])): ?>
-      <h2>Publicada</h2>
-    <?php 
-      Publicacion::crearPublicacion($publicacion);
-    ?>
-    <?php endif; ?>
+  <form method="POST" action="../modelos/entidad/publicacion.php">
     <div id="contenedorPublicaciones">
       CREAR PUBLICACION
       <div id="container">
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
-                      <div id="nUsuario" name="usuarioId">6</div>
-                      <div id="fechaPublicacion" name="fechaHora"></div>
+                      <div id="nUsuario" value="<?php echo $publicacion->userId ?>">6</div>
+                      <div id="fechaPublicacion" value="<?php echo $publicacion->fecha ?>"></div>
                   </div>
                   <div id="separadorCabecera"></div>
               </div>
               <div id="publicacion">
-                <input type="text" id="tituloPublicacion" name="titulo" placeholder="Introducir Titulo">
-                <textarea id="textoPublicacion" name="descripcion" placeholder="Introducir texto de la publicación"></textarea>
+                <input type="text" id="tituloPublicacion" placeholder="Introducir Titulo" value="<?php echo $publicacion->titulo ?>">
+                <textarea id="textoPublicacion" placeholder="Introducir texto de la publicación" value="<?php echo $publicacion->descripcion ?>"></textarea>
               </div>
           </div>
           <div id="contenedorBotones">
-              <button id="publicar" value="publicar">PUBLICAR</button>
+              <button id="publicar">PUBLICAR</button>
               <button id="borrar">BORRAR</button>
-          </div>
+          </div>  
       </div>
     </div>
   </form>
@@ -77,7 +71,7 @@ window.addEventListener("scroll", function() {
 document.addEventListener('DOMContentLoaded', function() {
     const fechaPublicacion = document.getElementById('fechaPublicacion');
     const fechaActual = new Date();
-    const opcionesFecha = {  day: 'numeric',month: 'numeric', year: 'numeric' };
+    const opcionesFecha = {  day: 'numeric',month: 'numeric', year: 'numeric', };
     fechaPublicacion.textContent = fechaActual.toLocaleDateString('es-ES', opcionesFecha);
 });
 </script>

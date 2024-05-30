@@ -60,6 +60,16 @@
 #tituloPublicacion{
     font-size: 1.4rem;
     margin: 6px;
+    width: 300px; /* Establece el ancho del campo */
+    height: 40px; /* Establece la altura del campo */
+    padding: 10px; /* Añade un poco de espacio interno para el texto */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+
+}
+#textoPublicacion{
+    margin: 6px;
+    width: 98%;
+    height: 100px;
 }
 #separadorPublicacion {
     width: 95%; /* Ajustar según sea necesario */
@@ -67,9 +77,7 @@
     margin-top: 5px; /* Espacio entre la información y el separador */
     margin: 0 auto;
   }
-#textoPublicacion{
-    margin: 6px;
-}
+
 button{
     width: auto;
     height: auto;
