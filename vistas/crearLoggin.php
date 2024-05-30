@@ -36,7 +36,7 @@
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
-                      <div id="nUsuario" name="usuarioId">6</div>
+                      <div id="nUsuario" name="usuarioId">2</div>
                       <div id="fechaPublicacion" name="fechaHora"></div>
                   </div>
                   <div id="separadorCabecera"></div>

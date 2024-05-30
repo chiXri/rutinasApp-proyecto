@@ -9,20 +9,18 @@ class Publicacion{
     public string $titulo;
     public string $descripcion;
     public DateTime $fecha;
-    public string $imagen;
 
-    function __construct(int $userId, string $titulo, string $descripcion, DateTime $fecha, string $imagen){
+    function __construct(int $userId, string $titulo, string $descripcion, DateTime $fecha){
         $this->userId = $userId;
         $this->titulo = $titulo;
         $this->descripcion = $descripcion;
         $this->fecha = $fecha;
-        $this->imagen = $imagen;
     }
 
     public static function verPublicaciones(){
         $fecha = new DateTime();
-        if (isset($_POST["user_id"]) && isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_POST["imagen"])){
-            return new Publicacion((int)$_POST["user_id"], $_POST["titulo"], $_POST["descripcion"],$fecha, $_POST["imagen"]);
+        if (isset($_POST["user_id"]) && isset($_POST["titulo"]) && isset($_POST["descripcion"])){
+            return new Publicacion((int)$_POST["user_id"], $_POST["titulo"], $_POST["descripcion"],$fecha);
         }
         else {
             return new Publicacion(0,"","",$fecha,"");

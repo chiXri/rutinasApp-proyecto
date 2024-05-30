@@ -1,28 +1,24 @@
-<?php if(isset($publicaciones) && is_array($publicaciones)): ?>
-    <?php foreach($publicaciones as $publicacion): ?>
+<?php 
 
-    <div id="container">
-        <div class="caja">
-            <div id="cabeceraPublicacion">
-                <div id="infoCabecera">
-                    <div id="nUsuario"><?php echo $publicacion->userId; ?></div>
-                    <div id="fechaPublicacion"><?php echo $publicacion->fecha->format('d-m-Y - H:i'); ?></div>
-                </div>
-                <div id="separadorCabecera"></div>
-            </div>
-            <div id="publicacion">
-                <div id="tituloPublicacion"><?php echo $publicacion->titulo; ?></div>
-                <div id="textoPublicacion"><?php echo $publicacion->descripcion; ?></div>
-            </div>
-        </div>
-        <div id="contenedorBotones">
-            <button id="publicar">PUBLICAR</button>
-            <button id="borrar">BORRAR</button>
-        </div>  
-    </div>
+    class SeervicioCrearPublicacion{
 
-    <?php endforeach; ?>
-<?php else: ?>
-    <p>No hay publicaciones disponibles.</p>
-<?php endif; ?>
+        public function crearPublicacion($usuarioIid, $titulo, $descripcion, $fechaHora){
+            $errores = array();
+
+
+            if(isset($_POST["usuarioId"]) && isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_POST["fechaHora"])){
+                
+            }
+                // Crear la consulta SQL corregida
+    $consulta = "INSERT INTO `rutina`(`user_id`, `titulo`, `descripcion`, `fechaHora`)
+    VALUES ('$publicacion->userId', '$publicacion->titulo', '$publicacion->descripcion', '$fecha')";
+
+
+
+        }
+
+    }
+
+
+?>
 

@@ -2,27 +2,15 @@
 
 include "./servicios/servicioCrearPublicaciones.php";
 
-    $usuarioIid = $_POST["usuarioId"];
-    $titulo = $_POST["nombre"];
+    $usuarioId = $_POST["usuarioId"];
+    $titulo = $_POST["titulo"];
+    $descripcion = $_POST["descripcion"];
+    $fechaHora = $_POST["fechaHora"];
 
-    $apellidos = $_POST["apellidos"];
-    $edad = $_POST["edad"];
-    $email = $_POST["email"];
-    $genero = $_POST["genero"];
+    $crearPublicacion = new SeervicioCrearPublicacion();
 
-    $registro = new ServicioRegistro();
-
-    $registro->registroUsuario($nombre, $contrasena, $apellidos, $edad, $email, $genero);
-
-
-
-
-
-    $fecha = $publicacion->fecha->format("Y-m-d H:i:s");
+    $crearPublicacion->crearPublicacion($usuarioId,$titulo,$descripcion,$fechaHora)
     
-    // Crear la consulta SQL corregida
-    $consulta = "INSERT INTO `rutina`(`user_id`, `titulo`, `descripcion`, `fechaHora`)
-                 VALUES ('$publicacion->userId', '$publicacion->titulo', '$publicacion->descripcion', '$fecha')";
 
 
 
