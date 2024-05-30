@@ -35,7 +35,7 @@
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
-                      <div id="nUsuario" name="usuarioId"><?php echo "User_ID" ?></div>
+                      <div id="nUsuario" name="usuarioId"></div>
                       <div id="fechaPublicacion" name="fechaHora"></div>
                   </div>
                   <div id="separadorCabecera"></div>

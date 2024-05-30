@@ -14,7 +14,7 @@ if (isset($_SESSION["usuario"])) {
     $usuario = $_SESSION["usuario"];
 } else {
     echo "<script>
-        alert('Debes autenticarte para enviar el formulario');
+        alert('Debes autenticarte para crear una publicación');
         window.location.href = '../vistas/login.php';
       </script>";
 }
@@ -29,9 +29,6 @@ $query = "SELECT user_id FROM usuario WHERE nombre = '$usuario'";
 $resultado = mysqli_query($conexion->conectar(), $query);
 $fila = mysqli_fetch_array($resultado);
 $usuario_id =  $fila["user_id"];
-
-
-
 
 
 $publicacion = new servicioPublicaciones();
