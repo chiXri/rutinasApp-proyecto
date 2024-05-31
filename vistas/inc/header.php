@@ -47,7 +47,7 @@ function usuario_autenticado() {
                     <a class="nav-link" href="/rutinasApp-proyecto/vistas/logout.php">CERRAR SESIÓN</a>
                 </li>
             <?php else: 
-                header('Location: ./login.php');
+                header('Location: ./vistas/login.php');
                 exit();
               ?>
                 
