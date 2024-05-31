@@ -4,7 +4,7 @@ include __DIR__ . "/vistas/inicio.php";
 
 
 <!-- prueba de conexión para las publicaciones -->
-<?php
+<!-- <?php
 
 include_once "servicioPublicaciones.php";
 
@@ -26,4 +26,4 @@ $publicaciones = servicioPublicaciones::obtenerPublicaciones();
             echo "No hay ofertas";
         }
     ?>
-</div>
+</div> -->
