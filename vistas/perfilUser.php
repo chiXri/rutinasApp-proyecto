@@ -43,7 +43,7 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/inicioLoggin.css" rel="stylesheet">
+    <link href="../assets/css/verRutinas.css" rel="stylesheet">
 
     <style>
     #showCalendarButton, #hideCalendarButton {

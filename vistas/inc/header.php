@@ -38,7 +38,7 @@ function usuario_autenticado() {
             <?php if (usuario_autenticado()): ?>
                 <li class="nav-item">
                 <li class="nav-item">
-                <a class="nav-link" href="/rutinasApp-proyecto/vistas/crearLoggin.php"> ¡GO! RUTINAS</a>
+                <a class="nav-link" href="/rutinasApp-proyecto/vistas/crearRutina.php"> ¡GO! RUTINAS</a>
               
                 <li class="nav-item">
                     <a class="nav-link" href="/rutinasApp-proyecto/vistas/contact.php">CONTACTO</a>

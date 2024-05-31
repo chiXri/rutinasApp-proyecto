@@ -37,7 +37,7 @@ $publicacion->crearPublicacion($usuario_id, $titulo, $descripcion, $fecha);
 
 echo "<script>
         alert('Publicación creada correctamente');
-        window.location.href = '../vistas/inicioLoggin.php';
+        window.location.href = '../vistas/verRutinas.php';
       </script>";
 
 ?>

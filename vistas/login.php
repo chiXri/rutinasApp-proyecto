@@ -49,7 +49,7 @@
         
 
         if (Autenticacion::autenticar($_POST["nombre"], $_POST["contrasena"])){
-          header("location: ../vistas/inicioLoggin.php");
+          header("location: ../vistas/verRutinas.php");
           //exit();
         } else {
            $error_message = "Usuario y/o contraseña incorrectos";

@@ -76,7 +76,7 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <!-- HOME -->
       <li class="nav-item">
-        <a href="/rutinasApp-proyecto/vistas/inicioLoggin.php" class="nav-link text-white text-size" aria-current="page">
+        <a href="/rutinasApp-proyecto/vistas/verRutinas.php" class="nav-link text-white text-size" aria-current="page">
           <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#home"/></svg>
           Inicio
         </a>
@@ -97,7 +97,7 @@
       </li> -->
       <!-- CREATE -->
       <li>
-        <a href="../vistas/crearLoggin.php" class="nav-link text-white text-size">
+        <a href="../vistas/crearRutina.php" class="nav-link text-white text-size">
           <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#create"/></svg>
           Crear
         </a>
@@ -120,7 +120,7 @@
     <!-- PROFILE -->
     <li>
     
-      <a href="../vistas/perfilLoggin.php" class="nav-link text-white text-size">
+      <a href="../vistas/perfilUser.php" class="nav-link text-white text-size">
       <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#perfil"/></svg>
         Perfil
       </a>

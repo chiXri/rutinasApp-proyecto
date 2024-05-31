@@ -39,7 +39,7 @@ $contacto->registroContacto($nombre, $email, $mensaje, $fecha, $usuario_id);
 
 echo "<script>
         alert('Formulario enviado correctamente');
-        window.location.href = '../vistas/inicioLoggin.php';
+        window.location.href = '../vistas/verRutinas.php';
       </script>";
 
 ?>

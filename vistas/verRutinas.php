@@ -30,7 +30,7 @@ $publicaciones = $servicioPublicaciones->listarPublicaciones();
     <script src="../assets/js/contact.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/inicioLoggin.css" rel="stylesheet">
+    <link href="../assets/css/verRutinas.css" rel="stylesheet">
 </head>
 
 <body>

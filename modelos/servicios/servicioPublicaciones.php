@@ -43,9 +43,12 @@
             }
         
             // Consulta SQL para listar las rutinas junto con el nombre del usuario
+         // Consulta SQL para listar las rutinas junto con el nombre del usuario y ordenar por fecha descendente
             $sql = "SELECT rutina.*, usuario.nombre AS usuario 
-                    FROM rutina 
-                    JOIN usuario ON rutina.user_id = usuario.user_id";
+            FROM rutina 
+            JOIN usuario ON rutina.user_id = usuario.user_id
+            ORDER BY rutina.fechaHora DESC";
+
         
             $result = $conexion->query($sql);
         

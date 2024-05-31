@@ -16,7 +16,7 @@
     <script src="../assets/js/contact.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/crearLoggin.css" rel="stylesheet">
+    <link href="../assets/css/crearRutina.css" rel="stylesheet">
 
   </head>
 
@@ -70,7 +70,7 @@ window.addEventListener("scroll", function() {
   }
 });
 
-/* SCRIPT PARA AÑADIR LA FECHA EN LA TABLA DE crearLoggin.php */
+/* SCRIPT PARA AÑADIR LA FECHA EN LA TABLA DE crearRutina.php */
 document.addEventListener('DOMContentLoaded', function() {
     const fechaPublicacion = document.getElementById('fechaPublicacion');
     const fechaActual = new Date();
