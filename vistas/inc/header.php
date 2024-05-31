@@ -37,10 +37,14 @@ function usuario_autenticado() {
         <ul class="navbar-nav ml-auto">
             <?php if (usuario_autenticado()): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/logout.php">Cerrar Sesión</a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/contact.php">Contacto</a>
+                <a class="nav-link" href="/rutinasApp-proyecto/vistas/crearLoggin.php"> ¡GO! RUTINAS</a>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/contact.php">CONTACTO</a>
+                </li>
+                </li>
+                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/logout.php">CERRAR SESIÓN</a>
                 </li>
             <?php else: 
                 header('Location: ./login.php');

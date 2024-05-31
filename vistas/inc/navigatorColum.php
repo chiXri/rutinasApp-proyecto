@@ -68,7 +68,7 @@
 
   <!-- Navigator colum-->
   <div id="navigatorColum" class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+  <a href="/rutinasApp-proyecto/vistas/inicio.php" class="nav-link text-white text-size" aria-current="page">
       <img src="../assets/img/logo.png" class="logo" alt="logoNavigatorColum">
     </a>
     

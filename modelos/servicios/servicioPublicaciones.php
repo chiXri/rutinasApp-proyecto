@@ -33,39 +33,36 @@
 
         }
 
-
-        public function listarPublicaciones(){
-
-               // Realizar la conexión a la base de datos
+        public function listarPublicaciones() {
+            // Realizar la conexión a la base de datos
             $conexion = new mysqli("localhost", "root", "", "proyectoifp");
-
+        
             // Verificar la conexión
             if ($conexion->connect_error) {
                 die("Error de conexión: " . $conexion->connect_error);
             }
-
-            // Consulta SQL para listar las rutinas en la base de datos
-            $sql = "SELECT * FROM rutina";
-
+        
+            // Consulta SQL para listar las rutinas junto con el nombre del usuario
+            $sql = "SELECT rutina.*, usuario.nombre AS usuario 
+                    FROM rutina 
+                    JOIN usuario ON rutina.user_id = usuario.user_id";
+        
             $result = $conexion->query($sql);
-
-        // Verificar si hay resultados
-        if ($result->num_rows > 0) {
-            $publicaciones = array();
-            while ($row = $result->fetch_assoc()) {
-                $publicaciones[] = $row;
+        
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                $publicaciones = array();
+                while ($row = $result->fetch_assoc()) {
+                    $publicaciones[] = $row;
+                }
+                $conexion->close();
+                return $publicaciones;
+            } else {
+                $conexion->close();
+                return array();
             }
-            return $publicaciones;
-        } else {
-            return array();
         }
-
-        $conexion->close();
-
-
-
-
-        }
+        
 
         public function listarPublicacionesUsuario($nombreUsuario) {
             // Realizar la conexión a la base de datos

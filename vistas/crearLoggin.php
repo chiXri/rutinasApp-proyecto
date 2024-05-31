@@ -36,10 +36,15 @@
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
-                      <div><input type="text" id="tituloPublicacion" name="titulo" placeholder="Introducir Titulo"></div>
-                      <div id="nUsuario" name="usuarioId"></div>
-                      
+                  <div>
+                      <select id="tituloPublicacion" name="categoria">
+                          <option value="Bienestar">-Bienestar</option>
+                          <option value="Productividad">-Productividad</option>
+                          <option value="Crecimiento">-Crecimiento</option>
+                      </select>
                   </div>
+    <div id="nUsuario" name="usuarioId"></div>
+  </div>
                   <div id="separadorCabecera"></div>
               </div>
               <div id="publicacion">

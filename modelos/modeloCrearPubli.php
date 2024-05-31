@@ -19,7 +19,7 @@ if (isset($_SESSION["usuario"])) {
       </script>";
 }
 
-$titulo = $_POST["titulo"];
+$titulo = $_POST["categoria"];
 $descripcion = $_POST["descripcion"];
 
 $fecha = date("Y-m-d H:i:s");
