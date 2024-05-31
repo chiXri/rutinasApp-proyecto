@@ -43,58 +43,7 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/verRutinas.css" rel="stylesheet">
-
-    <style>
-    #showCalendarButton, #hideCalendarButton {
-        border: none;
-        border-radius: 20px;
-        padding: 10px 20px;
-        width: 200px;
-        background-color: grey; /* Color de fondo del botón */
-        color: white; /* Color del texto del botón */
-        font-size: 16px;
-        cursor: pointer;
-        margin: 0 auto; /* Centrar horizontalmente */
-        margin-bottom: 10px; /* Espacio entre los botones */
-    }
-
-    #hideCalendarButton {
-        display: none; /* Por defecto, ocultar el botón "Ocultar calendario" */
-    }
-
-    #calendarContainer {
-        display: none;
-        text-align: center; /* Centrar el contenido del contenedor */
-    }
-
-    #calendar {
-        width: 400px;
-        height: 550px;
-        background-color: #212529;
-        color: white; /* Cambiar el color del texto a naranja */
-    }
-  /* Estilos para los números de día */
-  .fc-daygrid-day .fc-daygrid-day-number,
-  .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
-    color: #FFA366 !important; /* Color de los números de día */
-  }
-    /* Estilos para los nombres de los días */
-.fc-col-header-cell-cushion, .fc-col-header-cell {
-    color: white !important; /* Color de los nombres de los días */
-  }
-
-    /* Estilos adicionales para el efecto de rebote */
-    .rutina {
-        transition: transform 0.3s ease; /* Añadir transición suave */
-    }
-
-    /* Estilo para cuando se hace clic en la rutina */
-    .rutina.clicked {
-        transform: scale(1.1); /* Escalar la rutina al hacer clic */
-    }
-
-    </style>
+    <link href="../assets/css/perfilUser.css" rel="stylesheet">
 
 </head>
 
@@ -117,6 +66,7 @@
                 <?php foreach ($publicaciones as $publicacion): ?>
                     <div id="caja" class="rutina" id="<?php echo htmlspecialchars($publicacion['titulo']); ?>"> <!-- Agregar la clase rutina y el ID de la rutina -->
                         <?php echo $usuarioId?>
+                        <div id=""><?php echo htmlspecialchars($publicacion['rutina_id']); ?></div>
                         <div id="tituloPublicacion"><?php echo htmlspecialchars($publicacion['titulo']); ?></div>
                         <div id="separadorCabecera"></div>
                         <div id="cuerpoPublicacion">
@@ -125,6 +75,16 @@
                         <div id="fechaPublicacion">
                             <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
                         </div>
+                        <div id="botonesModificacion">
+                        <form method="POST" action="../modelos/modeloBorrarPubli.php">
+                            <input type="hidden" name="rutina_id" value="<?php echo $publicacion['rutina_id']; ?>">
+                            <button id="botonBorrar" class="boton" type="submit">Borrar rutina</button>
+                        </form>
+                        <form method="POST" action="../modelos/modeloModificarPubli.php">
+                            <input type="hidden" name="rutina_id" value="<?php echo $publicacion['rutina_id']; ?>">
+                            <button id="botonModificar" class="boton" type="submit">Modificar rutina</button>
+                        </form>
+                    </div>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
@@ -190,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/sidebars.js"></script>
+<script src="../assets/js/perfilUser.js"></script>
 
 </body>
 </html>

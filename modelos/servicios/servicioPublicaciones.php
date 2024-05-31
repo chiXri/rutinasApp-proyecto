@@ -111,6 +111,44 @@
                 return array();
             }
         }
+
+        public function borrarPublicacion($id_publicacion) {
+            // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
+        
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+        
+            // Consulta SQL para borrar la publicación en la base de datos
+            $sql = "DELETE FROM rutina WHERE rutina_id = ?";
+        
+            // Preparar la consulta
+            $statement = $conexion->prepare($sql);
+            if (!$statement) {
+                die("Error al preparar la consulta: " . $conexion->error);
+            }
+        
+            // Vincular el parámetro de ID de publicación
+            $statement->bind_param("i", $id_publicacion);
+        
+            // Ejecutar la consulta
+            $resultado = $statement->execute();
+        
+            // Verificar si la consulta se ejecutó correctamente
+            if ($resultado) {
+                // La publicación se eliminó correctamente
+                return true;
+            } else {
+                // Ocurrió un error al eliminar la publicación
+                die("Error al eliminar la publicación: " . $statement->error);
+            }
+        
+            // Cerrar la consulta y la conexión
+            $statement->close();
+            $conexion->close();
+        }
         
         
         
