@@ -56,25 +56,25 @@
               <div id="cuerpoPublicacion">
                 <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
               </div>
-              <div id="fechaPublicacion">
-                <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
-              </div>
-            <div class="publicacion">
-              <h2><?php echo htmlspecialchars($publicacion['titulo']); ?></h2>
-              <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
-              <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
               <!-- Botones para compartir -->
-                <div>
-                    <!-- Botón para compartir en Facebook -->
-                    <a class="share-button facebook" href="https://www.facebook.com/sharer/sharer.php?" target="_blank">
-                        <i class="fab fa-facebook-f"></i> <!-- Icono de Facebook -->
-                    </a>
-                    <br>
-                    <!-- Botón para compartir en Twitter -->
-                    <a class="share-button twitter" href="https://twitter.com/intent/tweet?text=" target="_blank">
-                        <i class="fab fa-twitter"></i> <!-- Icono de Twitter -->
-                    </a>
+              <div id="piePublicacion">
+                <div id="botonFacebook">
+                  <!-- Botón para compartir en Facebook -->
+                  <a class="share-button facebook" href="https://www.facebook.com/sharer/sharer.php?" target="_blank">
+                  <i class="fab fa-facebook-f" ></i> <!-- Icono de Facebook -->
+                  </a>
                 </div>
+                <div>
+                  <!-- Botón para compartir en Twitter -->
+                  <a class="share-button twitter" href="https://twitter.com/intent/tweet?text=" target="_blank">
+                  <i class="fab fa-twitter"></i> <!-- Icono de Twitter -->
+                  </a>
+                </div>
+              
+                <div id="fechaPublicacion">
+                  <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
+                </div>
+              </div>
             </div>
           <?php endforeach; ?>
         <?php else: ?>

@@ -66,12 +66,6 @@
     height: auto;
     margin: 6px;
 }
-#fechaPublicacion{
-    width: auto;
-    height: auto;
-    margin: 6px;
-    text-align: right;
-}
 #publicacion{
     width: auto;
     height: auto;
@@ -90,34 +84,37 @@
 #textoPublicacion{
     margin: 6px;
 }
-button{
+
+#piePublicacion{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+
+}
+#botonFacebook{
+
     width: auto;
     height: auto;
-    display: flex;
-    align-items: center;
-    padding: 4px;
-    background-color: rgb(62, 78, 107);
 }
-
-#contenedorBotones{
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+#fechaPublicacion{
+    width: auto;
+    height: auto;
+    float: right;
+    margin-left: auto;
 }
-
 .share-button {
-    display: inline-block;
     margin: 5px;
     padding: 10px;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 20px; /* Tamaño del icono */
 }
 .facebook {
     background-color: #3b5998;
+    font-size: 10px;
 }
 .twitter {
     background-color: #1da1f2;
+    font-size: 10px;
 }
