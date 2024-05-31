@@ -1,3 +1,7 @@
+#paginaPublicaciones{
+    width: 100%;
+    height: 100vh;
+}
 #contenedorPublicaciones{
     width: 100%;
     height: 100vh;
@@ -6,6 +10,19 @@
     flex-direction: column;
     background-color: #FFA366;
 
+
+}
+#tituloRutinas{
+    text-align: center;
+    font-size: 4.7rem;
+    font-family: impact;
+    letter-spacing: 0.1em; /* Ajusta este valor según el espacio que desees */
+    color: white; /* Para que el borde negro sea visible */
+    text-shadow: 
+        -3px -3px 0 #000,  
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000; /* Crea un borde negro */
 }
 #container {
     width: 100%;
@@ -16,8 +33,9 @@
     padding-top: 30px;
     max-height: auto;
     overflow-y: auto;
+    font-family: verdana;
 }
-.caja {
+#caja {
     width: 80%;
     height: auto;
     border: 3px solid black;
@@ -27,21 +45,22 @@
     background-color: rgba(255, 255, 255, 0.349);
     border-radius: 4px;
 }
-#cabeceraPublicacion {
-    display: flex;
-    flex-direction: column; /* Apilar los elementos verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-  }
-  #infoCabecera {
-    width: 100%; /* Asegurarse que ocupe todo el ancho */
-    display: flex;
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
+#tituloPublicacion {
+    font-weight: bold;
+    text-align: center;
+    font-family: Verdana;
   }
   #separadorCabecera {
-    width: 95%; /* Ajustar según sea necesario */
+    width: 80%; /* Ajustar según sea necesario */
     border-bottom: 3px solid black;
     margin-top: 5px; /* Espacio entre la información y el separador */
+    margin: 0 auto;
   }
+#cuerpoPublicacion{
+    margin: 10px;
+    font-size: 1.5rem;
+
+}
 #nUsuario{
     width: auto;
     height: auto;
@@ -51,6 +70,7 @@
     width: auto;
     height: auto;
     margin: 6px;
+    text-align: right;
 }
 #publicacion{
     width: auto;

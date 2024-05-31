@@ -24,8 +24,9 @@
       -->
 
       <?php
-session_start();
-
+        if (session_status() === PHP_SESSION_NONE){
+          session_start();
+          }
 // Función para comprobar si el usuario está autenticado
 function usuario_autenticado() {
     return isset($_SESSION['usuario']); 

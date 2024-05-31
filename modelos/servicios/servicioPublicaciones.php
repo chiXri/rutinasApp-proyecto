@@ -67,6 +67,54 @@
 
         }
 
+        public function listarPublicacionesUsuario($nombreUsuario) {
+            // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
+        
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+        
+            // Consulta SQL para listar las publicaciones del usuario con el nombre especificado
+            $sql = "SELECT rutina.* FROM rutina 
+                    INNER JOIN usuario ON rutina.user_id = usuario.user_id 
+                    WHERE usuario.nombre = ?";
+        
+            // Preparar la declaración SQL
+            $stmt = $conexion->prepare($sql);
+            if ($stmt === false) {
+                die("Error al preparar la consulta: " . $conexion->error);
+            }
+        
+            // Vincular el parámetro del nombre del usuario
+            $stmt->bind_param("s", $nombreUsuario);
+        
+            // Ejecutar la consulta
+            $stmt->execute();
+        
+            // Obtener el resultado
+            $result = $stmt->get_result();
+        
+            // Verificar si hay resultados
+            if ($result->num_rows > 0) {
+                $publicaciones = array();
+                while ($row = $result->fetch_assoc()) {
+                    $publicaciones[] = $row;
+                }
+                $stmt->close();
+                $conexion->close();
+                return $publicaciones;
+            } else {
+                $stmt->close();
+                $conexion->close();
+                return array();
+            }
+        }
+        
+        
+        
+
        
     }
     

@@ -1,5 +1,6 @@
 <!-- Custom styles for this template -->
 <link href="../assets/css/sidebars.css" rel="stylesheet">
+<link href="../assets/css/navBar.css" rel="stylesheet">
 
 <div class="body-main">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -55,6 +56,11 @@
     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
   </symbol>
+    <!-- PERFIL -->
+    <symbol id="perfil" viewBox="0 0 16 16">
+    <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
+    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  </symbol>
 </svg>
 
 <main class="d-flex flex-nowrap">
@@ -70,29 +76,29 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <!-- HOME -->
       <li class="nav-item">
-        <a href="/rutinasApp-proyecto/vistas/inicioLoggin.php" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        <a href="/rutinasApp-proyecto/vistas/inicioLoggin.php" class="nav-link text-white text-size" aria-current="page">
+          <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#home"/></svg>
           Inicio
         </a>
       </li>
       <!-- SEARCH -->
-      <li class="nav-item">
+<!--       <li class="nav-item">
         <a href="#" class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#search"/></svg>
           Buscar
         </a>
-      </li>
+      </li> -->
       <!-- MESSAGES -->
-      <li>
-        <a href="#" class="nav-link text-white">
+<!--       <li>
+        <a href="#" class="nav-link active text-white">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#mesaje"/></svg>
           Mensajes
         </a>
-      </li>
+      </li> -->
       <!-- CREATE -->
       <li>
-        <a href="../vistas/crearLoggin.php" class="nav-link text-white">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#create"/></svg>
+        <a href="../vistas/crearLoggin.php" class="nav-link text-white text-size">
+          <svg class="bi pe-none me-2" width="26" height="26"><use xlink:href="#create"/></svg>
           Crear
         </a>
       </li>
@@ -114,8 +120,8 @@
     <!-- PROFILE -->
     <li>
     
-      <a href="#" class="nav-link text-white">
-        <img src="https://github.com/mdo.png" alt="" width="22" height="22" class="rounded-circle me-2">
+      <a href="../vistas/perfilLoggin.php" class="nav-link text-white text-size">
+      <svg class="bi pe-none me-2" width="24" height="24"><use xlink:href="#perfil"/></svg>
         Perfil
       </a>
     

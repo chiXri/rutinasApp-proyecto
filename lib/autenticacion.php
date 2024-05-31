@@ -8,7 +8,9 @@ class Autenticacion{
 
     public static function estaAutenticado(){
         // Debugging: Mostrar si el usuario está autenticado
+        if (session_status() === PHP_SESSION_NONE){
         session_start();
+        }
         return isset($_SESSION[self::claveUsuario]);
     }
 
@@ -23,6 +25,8 @@ class Autenticacion{
             // Debugging: Indicar que no hay usuario autenticado
             //echo "No hay usuario autenticado.<br>";
             return '';
+
+
         }
     }
 

@@ -5,11 +5,10 @@
     // Crear una instancia del servicio
     $servicioPublicaciones = new servicioPublicaciones();
 
-    //Obtener el nombre de usuario
     $usuarioId = Autenticacion::obtenerUsuario();
 
     // Obtener publicaciones
-    $publicaciones = $servicioPublicaciones->listarPublicaciones();
+    $publicaciones = $servicioPublicaciones->listarPublicacionesUsuario($usuarioId);
 ?>
 
 <!doctype html>
@@ -41,15 +40,20 @@
   <?php
   include "inc/header.php";
   include("inc/navigatorColum.php");
+
+
+
+
   ?>
   <!-- SE MUESTRAN LAS PUBLICACIONES DE LA BASE DE DATOS  -->
   
   <div id="contenedorPublicaciones">
-    <div id="tituloRutinas"> <p>RUTINAS</p> </div>
+    <div id="tituloRutinas"> <p>MIS RUTINAS</p> </div>
       <div id="container">
         <?php if (count($publicaciones) > 0): ?>
           <?php foreach ($publicaciones as $publicacion): ?>
             <div id="caja">
+              <?php echo $usuarioId?>
               <div id="tituloPublicacion"><?php echo htmlspecialchars($publicacion['titulo']); ?></div>
               <div id="separadorCabecera"></div>
               <div id="cuerpoPublicacion">

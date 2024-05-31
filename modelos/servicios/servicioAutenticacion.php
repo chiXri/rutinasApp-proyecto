@@ -31,6 +31,10 @@ class ServicioAutenticacion{
     
         return $validacionExitosa;
     }
+
+    public static function obtenerUsuario(){
+        
+    }
     
 }
 

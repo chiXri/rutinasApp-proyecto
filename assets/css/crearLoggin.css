@@ -6,6 +6,19 @@
     flex-direction: column;
     background-color: #FFA366;
 
+
+}
+#tituloCrearRutinas{
+    text-align: center;
+    font-size: 4.7rem;
+    font-family: impact;
+    letter-spacing: 0.1em; /* Ajusta este valor según el espacio que desees */
+    color: white; /* Para que el borde negro sea visible */
+    text-shadow: 
+        -3px -3px 0 #000,  
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000; /* Crea un borde negro */
 }
 #container {
     width: 100%;
@@ -32,15 +45,21 @@
     flex-direction: column; /* Apilar los elementos verticalmente */
     align-items: center; /* Centrar horizontalmente */
   }
-  #infoCabecera {
-    width: 100%; /* Asegurarse que ocupe todo el ancho */
-    display: flex;
-    justify-content: space-between; /* Distribuir espacio entre los elementos */
+  #tituloPublicacion {
+    text-align: center;
+    background-color: #00000000;
+    color: #000;
+    font-weight: bold;
+    font-family: verdana;
+    border: 2px solid black;
+    margin: 8px;
   }
   #separadorCabecera {
-    width: 95%; /* Ajustar según sea necesario */
+    width: 80%; /* Ajustar según sea necesario */
     border-bottom: 3px solid black;
     margin-top: 5px; /* Espacio entre la información y el separador */
+    margin: 0 auto;
+    margin-bottom: 6px;
   }
 #nUsuario{
     width: auto;
@@ -51,25 +70,20 @@
     width: auto;
     height: auto;
     margin: 6px;
+    text-align: right;
 }
 #publicacion{
     width: auto;
     height: auto;
 }
-
-#tituloPublicacion{
-    font-size: 1.4rem;
-    margin: 6px;
-    width: 300px; /* Establece el ancho del campo */
-    height: 40px; /* Establece la altura del campo */
-    padding: 10px; /* Añade un poco de espacio interno para el texto */
-    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
-
-}
 #textoPublicacion{
     margin: 6px;
     width: 98%;
     height: 100px;
+    background-color: #00000000;
+    color: #000;
+    border: 2px solid black;
+
 }
 #separadorPublicacion {
     width: 95%; /* Ajustar según sea necesario */
@@ -77,19 +91,21 @@
     margin-top: 5px; /* Espacio entre la información y el separador */
     margin: 0 auto;
   }
-
-button{
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    padding: 4px;
-    background-color: rgb(62, 78, 107);
-}
-
 #contenedorBotones{
     width: 80%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content:right;
 }
+  #publicar{
+    width: 9rem;
+    height: 3rem;
+    padding: 4px;
+    background-color:black;
+    border: 2px solid white;
+    font-family: monospace;
+    font-size: 1.3rem;
+    font-weight: 2px;
+}
+
+

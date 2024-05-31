@@ -20,38 +20,41 @@
 
   </head>
 
-  <body>
+  <div>
 
   <!-- SIDEBAR -->
   <?php
+  include "inc/header.php";
   include("inc/navigatorColum.php");
   ?>
 
   <!-- CABECERA CREAR PUBLICACIONES -->
-
-      CREAR PUBLICACION
+  <div id="contenedorPublicaciones">
+  <div id="tituloCrearRutinas">CREAR PUBLICACION</div>
       <form method="POST" action="../modelos/modeloCrearPubli.php">
       <div id="container">
           <div class="caja">
               <div id="cabeceraPublicacion">
                   <div id="infoCabecera">
+                      <div><input type="text" id="tituloPublicacion" name="titulo" placeholder="Introducir Titulo"></div>
                       <div id="nUsuario" name="usuarioId"></div>
-                      <div id="fechaPublicacion" name="fechaHora"></div>
+                      
                   </div>
                   <div id="separadorCabecera"></div>
               </div>
               <div id="publicacion">
-                <input type="text" id="tituloPublicacion" name="titulo" placeholder="Introducir Titulo">
+                
                 <textarea id="textoPublicacion" name="descripcion" placeholder="Introducir texto de la publicación"></textarea>
               </div>
+              <div id="fechaPublicacion" name="fechaHora"></div>
           </div>
           <div id="contenedorBotones">
-              <button id="publicar" type="submit">PUBLICAR</button>
-              <!-- <button id="borrar">BORRAR</button> -->
+              <button id="publicar" type="submit">¡PUBLICAR!</button>
           </div>
       </div>
     </div>
   </form>
+</div>
 
 <script>
   // Evento al hacer scroll en la página
