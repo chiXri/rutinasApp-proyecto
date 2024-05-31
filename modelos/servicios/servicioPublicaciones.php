@@ -150,6 +150,90 @@
             $conexion->close();
         }
         
+        public function modificarPublicacion($publicacion) {
+            // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
+        
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+        
+            // Consulta SQL para actualizar la publicación en la base de datos
+            $sql = "UPDATE rutina SET titulo = ?, descripcion = ?, fechaHora = ? WHERE rutina_id = ?";
+        
+            // Preparar la consulta
+            $statement = $conexion->prepare($sql);
+            if (!$statement) {
+                die("Error al preparar la consulta: " . $conexion->error);
+            }
+        
+            // Vincular los parámetros
+            $statement->bind_param("sssi", $publicacion->getTitulo(), $publicacion->getDescripcion(), $publicacion->getFechaHora(), $publicacion->getId());
+        
+            // Ejecutar la consulta
+            $resultado = $statement->execute();
+        
+            // Verificar si la consulta se ejecutó correctamente
+            if ($resultado) {
+                $statement->close();
+                $conexion->close();
+                return true;
+            } else {
+                $statement->close();
+                $conexion->close();
+                return false;
+            }
+        }
+
+        public function obtenerPublicacionPorId($id) {
+            // Realizar la conexión a la base de datos
+            $conexion = new mysqli("localhost", "root", "", "proyectoifp");
+        
+            // Verificar la conexión
+            if ($conexion->connect_error) {
+                die("Error de conexión: " . $conexion->connect_error);
+            }
+        
+            // Consulta SQL para obtener la publicación por ID y usuario
+            $sql = "SELECT * FROM rutina WHERE rutina_id = ?";
+        
+            // Preparar la consulta
+            $statement = $conexion->prepare($sql);
+            if (!$statement) {
+                die("Error al preparar la consulta: " . $conexion->error);
+            }
+        
+            // Vincular los parámetros
+            $statement->bind_param("i", $id);
+        
+            // Ejecutar la consulta
+            $statement->execute();
+        
+            // Obtener el resultado
+            $resultado = $statement->get_result();
+            $publicacion = $resultado->fetch_assoc();
+        
+            // Cerrar la consulta y la conexión
+            $statement->close();
+            $conexion->close();
+        
+            // Devolver el resultado como un objeto de la clase Publicacion
+            if ($publicacion) {
+                return new Publicacion(
+                    $publicacion['rutina_id'],
+                    $publicacion['titulo'],
+                    $publicacion['descripcion'],
+                    $publicacion['fechaHora'],
+                    $publicacion['user_id']
+                );
+            } else {
+                return null;
+            }
+        }
+        
+        
+        
         
         
 

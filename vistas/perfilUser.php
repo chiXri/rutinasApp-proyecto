@@ -55,43 +55,43 @@
     include "inc/header.php";
     include("inc/navigatorColum.php");
     ?>
-    <!-- SE MUESTRAN LAS PUBLICACIONES DE LA BASE DE DATOS  -->
-    
-    <div id="contenedorPublicaciones">
-        <div id="tituloRutinas"> <p>MIS RUTINAS</p> </div>
-        <button id="showCalendarButton">Mostrar calendario</button>
-        <button id="hideCalendarButton" style="display: none;">Ocultar calendario</button>
-        <div id="container">
-            <?php if (count($publicaciones) > 0): ?>
-                <?php foreach ($publicaciones as $publicacion): ?>
-                    <div id="caja" class="rutina" id="<?php echo htmlspecialchars($publicacion['titulo']); ?>"> <!-- Agregar la clase rutina y el ID de la rutina -->
-                        <?php echo $usuarioId?>
-                        <div id=""><?php echo htmlspecialchars($publicacion['rutina_id']); ?></div>
-                        <div id="tituloPublicacion"><?php echo htmlspecialchars($publicacion['titulo']); ?></div>
-                        <div id="separadorCabecera"></div>
-                        <div id="cuerpoPublicacion">
-                            <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
-                        </div>
-                        <div id="fechaPublicacion">
-                            <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
-                        </div>
-                        <div id="botonesModificacion">
-                        <form method="POST" action="../modelos/modeloBorrarPubli.php">
-                            <input type="hidden" name="rutina_id" value="<?php echo $publicacion['rutina_id']; ?>">
-                            <button id="botonBorrar" class="boton" type="submit">Borrar rutina</button>
-                        </form>
-                        <form method="POST" action="../modelos/modeloModificarPubli.php">
-                            <input type="hidden" name="rutina_id" value="<?php echo $publicacion['rutina_id']; ?>">
-                            <button id="botonModificar" class="boton" type="submit">Modificar rutina</button>
-                        </form>
-                    </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No hay publicaciones disponibles.</p>
-            <?php endif; ?>  
+<!-- SE MUESTRAN LAS PUBLICACIONES DE LA BASE DE DATOS  -->
+<div id="contenedorPublicaciones">
+  <div id="tituloRutinas"> <p>MIS RUTINAS</p> </div>
+    <button id="showCalendarButton">Mostrar calendario</button>
+    <button id="hideCalendarButton" style="display: none;">Ocultar calendario</button>
+  <div id="container">
+    <?php if (count($publicaciones) > 0): ?>
+      <?php foreach ($publicaciones as $publicacion): ?>
+        <div id="caja">
+          <?php echo $usuarioId?>
+          <div id=""><?php echo htmlspecialchars($publicacion['rutina_id']); ?></div>
+          <div id="tituloPublicacion"><?php echo htmlspecialchars($publicacion['titulo']); ?></div>
+          <div id="separadorCabecera"></div>
+          <div id="cuerpoPublicacion">
+            <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
+          </div>
+          <div id="fechaPublicacion">
+            <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
+          </div>
+          <div id="botonesModificacion">
+            <form method="POST" action="../modelos/modeloBorrarPubli.php" style="display:inline;">
+              <input type="hidden" name="rutina_id" value="<?php echo htmlspecialchars($publicacion['rutina_id']); ?>">
+              <button id="botonBorrar" class="boton" type="submit">Borrar rutina</button>
+            </form>
+            <form method="GET" action="../modelos/modeloModificarPubli.php" style="display:inline;">
+              <input type="hidden" name="rutina_id" value="<?php echo htmlspecialchars($publicacion['rutina_id']); ?>">
+              <button id="botonModificar" class="boton" type="submit">Modificar rutina</button>
+            </form>
+          </div>
         </div>
-    </div>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <p>No hay publicaciones disponibles.</p>
+    <?php endif; ?>  
+  </div>
+</div>
+
   
     <div id="calendarContainer">
         <div id="calendar"></div>

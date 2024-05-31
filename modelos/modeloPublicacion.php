@@ -1,20 +1,15 @@
 <?php
-
-include_once __DIR__ . "/../../modelos/servicios/servicioPublicaciones.php";
-
 class Publicacion {
     private $id;
     private $titulo;
     private $descripcion;
     private $fechaHora;
-    private $usuarioId;
 
-    public function __construct($id, $titulo, $descripcion, $fechaHora, $usuarioId) {
+    public function __construct($id, $titulo, $descripcion, $fechaHora) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->descripcion = $descripcion;
         $this->fechaHora = $fechaHora;
-        $this->usuarioId = $usuarioId;
     }
 
     public function getId() {
@@ -33,9 +28,7 @@ class Publicacion {
         return $this->fechaHora;
     }
 
-    public function getUsuarioId() {
-        return $this->usuarioId;
-    }
+ 
 
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
