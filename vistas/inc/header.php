@@ -42,10 +42,11 @@ function usuario_autenticado() {
                 <li class="nav-item">
                     <a class="nav-link" href="/rutinasApp-proyecto/vistas/contact.php">Contacto</a>
                 </li>
-            <?php else: ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="/rutinasApp-proyecto/vistas/login.php">Iniciar Sesión</a>
-                </li>
+            <?php else: 
+                header('Location: ./login.php');
+                exit();
+              ?>
+                
             <?php endif; ?>
         </ul>
     </div>

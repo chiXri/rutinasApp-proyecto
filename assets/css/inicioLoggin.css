@@ -105,3 +105,19 @@ button{
     display: flex;
     justify-content: space-between;
 }
+
+.share-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px; /* Tamaño del icono */
+}
+.facebook {
+    background-color: #3b5998;
+}
+.twitter {
+    background-color: #1da1f2;
+}

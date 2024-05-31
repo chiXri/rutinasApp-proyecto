@@ -26,6 +26,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script src="../assets/js/contact.js"></script>
 
@@ -58,6 +59,22 @@
               <div id="fechaPublicacion">
                 <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
               </div>
+            <div class="publicacion">
+              <h2><?php echo htmlspecialchars($publicacion['titulo']); ?></h2>
+              <p><?php echo htmlspecialchars($publicacion['descripcion']); ?></p>
+              <small><?php echo htmlspecialchars($publicacion['fechaHora']); ?></small>
+              <!-- Botones para compartir -->
+                <div>
+                    <!-- Botón para compartir en Facebook -->
+                    <a class="share-button facebook" href="https://www.facebook.com/sharer/sharer.php?" target="_blank">
+                        <i class="fab fa-facebook-f"></i> <!-- Icono de Facebook -->
+                    </a>
+                    <br>
+                    <!-- Botón para compartir en Twitter -->
+                    <a class="share-button twitter" href="https://twitter.com/intent/tweet?text=" target="_blank">
+                        <i class="fab fa-twitter"></i> <!-- Icono de Twitter -->
+                    </a>
+                </div>
             </div>
           <?php endforeach; ?>
         <?php else: ?>
