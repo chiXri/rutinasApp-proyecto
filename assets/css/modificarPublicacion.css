@@ -1,0 +1,55 @@
+#cuerpo{
+    background-color: #FFA366;
+}
+#tituloCrearRutinas{
+    text-align: center;
+    font-size: 4.7rem;
+    font-family: impact;
+    letter-spacing: 0.1em; /* Ajusta este valor según el espacio que desees */
+    color: white; /* Para que el borde negro sea visible */
+    text-shadow: 
+        -3px -3px 0 #000,  
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000; /* Crea un borde negro */
+}
+#botonModificar{
+    width: auto;
+    height: 3rem;
+    border: 3px solid black;
+    font-weight: bold;
+    background-color: black;
+    transition: background-color 0.5s, color 0.5s;
+}
+#botonModificar.cambiarColor{
+    background-color: rgb(33, 150, 101);
+    color: black;
+
+}
+#botones{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+#botonCancelar{
+    width: 6rem;
+    height: 3rem;
+    border: 3px solid black;
+    font-weight: bold;
+    background-color: black;
+    transition: background-color 0.5s, color 0.5s;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+    display: inline-flex;       
+    justify-content: center;    
+    align-items: center;        
+}
+#botonCancelar.cambiarColor{
+    background-color: rgb(185, 42, 42);
+    color: black;
+
+}

@@ -166,13 +166,13 @@ main {
 .container {
   font-family: Arial, sans-serif;
   background-color: #FFA366;
-  padding: 50px;
-  display: flex;
+/*   padding: 50px;
+ */  display: flex;
   justify-content: center;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+/*   align-items: center;
+ */  display: flex;
+/*   justify-content: space-between;
+ */  width: 100%;
   color: black;
   margin: 0px;
 }
@@ -217,7 +217,7 @@ textarea {
 
 button[type="submit"] {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 5px;

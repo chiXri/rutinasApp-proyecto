@@ -37,12 +37,14 @@ $publicacion = $servicioPublicaciones->obtenerPublicacionPorId($rutina_id, $usua
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modificar Publicación</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <title>Modificar Publicación asf</title>
+
+
   </head>
   <body>
-    <div class="container">
-      <h1>Modificar Publicación</h1>
+    <div id="contenedor">
+    <div class="" >
+    <div id="tituloCrearRutinas">MODIFICAR PUBLICACION</div>
       <form method="POST" action="../modelos/procesarModificacionPubli.php">
         <input type="hidden" name="rutina_id" value="<?php echo htmlspecialchars($publicacion->getId()); ?>">
         <div class="mb-3">
@@ -57,9 +59,15 @@ $publicacion = $servicioPublicaciones->obtenerPublicacionPorId($rutina_id, $usua
           <label for="fechaHora" class="form-label">Fecha y Hora</label>
           <input type="datetime-local" class="form-control" id="fechaHora" name="fechaHora" value="<?php echo htmlspecialchars($publicacion->getFechaHora()); ?>" required>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <div id="botones">
+            <button id="botonModificar" class="boton" type="submit">Guardar cambios</button>
+            <a href="../vistas/perfilUser.php" id="botonCancelar" class="boton">Cancelar</a>
+        </div>
+
       </form>
     </div>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <script src="../assets/js/perfilUser.js"></script>
   </body>
 </html>

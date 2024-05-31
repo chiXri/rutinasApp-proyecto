@@ -51,8 +51,14 @@ if (!$publicacion) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Modificar Publicación</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/modificarPublicacion.css" rel="stylesheet">
+
 </head>
 <body>
+<?php
+  include "../vistas/inc/header.php";
+  include("../vistas/inc/navigatorColum.php");
+  ?>
 <div class="container">
     <!-- Aquí va el formulario para modificar la publicación -->
     <?php include_once "../vistas/modificarPubli.php"?>
